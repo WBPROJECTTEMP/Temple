@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>KTT | Environment</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!-- Custom Theme files -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="{{ url_for('static',filename = 'css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" media="all">
+  <link href="{{ url_for('static',filename = 'css/style.css') }}" type="text/css" rel="stylesheet" media="all">
+  <link href="{{ url_for('static',filename = 'css/style1.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- navigation -->
+  <link href="{{ url_for('static',filename = 'css/nav.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- banner slider -->
+  <link href="{{ url_for('static',filename = 'css/css_slider.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- font-awesome icons -->
+  <link href="{{ url_for('static',filename = 'css/font-awesome.min.css') }}" rel="stylesheet">
+  <!-- //Custom Theme files -->
+  <!-- online-fonts -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Charm|Kaushan+Script" rel="stylesheet">
+  <!-- Common js -->
+  <script src="{{ url_for('static',filename = 'js/jquery-2.2.3.min.js') }}"></script>
+</head>
+
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+  <!-- header -->
+ <div class="main-nav">
+<div class="content white agile-info">
+
+  <nav class="mnu navbar-light">
+
+      <img src="static/images/KIIT-Temple_logo.jpg" >
+
+    <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+    <input type="checkbox" id="drop">
+    <ul class="menu">
+    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Overview</a>
+        <div class="dropdown-content  show">
+          <a href="/aboutktt" class="nav-link">About KTT</a>
+          <a class="nav-link" href="/founder">Founder</a>
+          <a href="https://kiit.ac.in/" class="nav-link">KIIT</a>
+          <a href="https://www.kiss.ac.in/" class="nav-link">KISS</a>
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Puja</a>
+        <div class="dropdown-content  show">
+          <a href="/puja" class="nav-link">Puja</a>
+          <a class="nav-link" href="/festivals">Festivals</a>
+          <a href="/rituals" class="nav-link">Rituals</a>
+          <a href="/deities" class="nav-link">Deities</a>
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Services</a>
+        <div class="dropdown-content  show">
+          <a href="/hall" class="nav-link">Ananda Bazar</a>
+          <a href="/bhoga" class="nav-link">Bhoga Bazar</a>
+          {% if login_session %}
+          <a href="/amtdonate" class="nav-link">Donation</a>
+          {% else %}
+          <a href="/donation" class="nav-link">Donation</a>
+          {% endif %}
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Humanatarian Services</a>
+        <div class="dropdown-content  show">
+          <a href="/education" class="nav-link">Education</a>
+          <a class="nav-link" href="/health">Health & Wellness</a>
+          <a href="/environment" class="nav-link">Environment</a>
+          <a href="/family" class="nav-link">Family & Community Welfare</a>
+          <a href="/rural" class="nav-link">Rural Development</a>
+        </div>
+      </li>
+      {% if login_session %}
+      <li class="nav-item"><a class="nav-link" href="/amtdonate">Donation</a></li>
+      {% else %}
+      <li class="nav-item"><a class="nav-link" href="/donation">Donation</a></li>
+      {% endif %}
+                  <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                  <li class="dropdown nav-item"><a  class="nav-link" href="/contact">Contact Us</a>
+                    <div class="dropdown-content show">
+                      <a href="/contact" class="nav-link">Feedback</a>
+                      <a class="nav-link" href="/contact">Complaint</a>
+                    </div>
+                  </li>
+      {% if login_session %}
+      <li class="nav-item"><a class="nav-link" href="/logout">LogOUT</a></li>
+      {% else %}
+      <li class="nav-item"><a class="nav-link" href="/donation">LogIN</a></li>
+      {% endif %}
+              </ul>
+  </nav>
+
+        </div>
+      </div>
+
+  <div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+
+      <h2 class="title-inner">
+          <br>
+        Humanitarian Services
+
+      </h2>
+
+
+    </div>
+    <!-- //banner-text -->
+  </div>
+
+
+
+
+  <!-- main -->
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+        <form method="get">
+          <div id="about" style="margin-top:30px;" class="mainbox aboutbox text-center">
+            <div class="panel "><br>
+              <div class="container">
+                <h4 class="rad-txt" style=" padding: 15px;
+            text-shadow: 0px 3px 2px black;
+            color: white;
+            font-weight: bolder;
+
+            font-size: 38px;">
+                  Education
+
+                </h4>
+
+
+              </div>
+                <div class="container" >
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card" style="width: 80%;height: 100%; margin: 0 auto;">
+                        <img class="card-img-top" src="static/images/st5.jpg" style="width: auto; height: 100%; padding: 5px;">
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="margin-bottom: 25px;">
+                      <div class="card" style="width: 80%;height: 100%; margin: 0 auto;padding: 1em;">
+                        <div class="card-body" style="font-weight: 10%;font-size:20px;text-align: justify;">
+
+                            KTT aims to promote education at all levels for every child because education is a fundamental human right which is essential for the understanding and exercising of all other human rights. Kalinga Institute of Social Sciences has a constant endeavour to empower individuals by making them aware of their rights and thus benefit the tribal population that has been systematically ignored and oppressed.
+
+                        <br><br>
+
+                            KTT uplifts the sacred work of Kalinga Institute of Social Sciences as the working agenda of former is in conjunction with the theories and objectives of the latter.
+
+                          <br><br>
+                            KTT supports KISS’s work towards tribal people to exhilarate them to a standard where they can defend their lives, protect their lands and determine their own futures through Education.
+                          <br><br>
+
+                            Education is knowing about the facts of life and ways to live it to the fullest not just for oneself but everyone. In every part of life we learn. KTT preaches it through spirituality, philanthropy and religious ways.
+
+                          <br>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <br>
+  <footer class="bg-theme1">
+    <div class="container-fluid">
+      <div class="cpy-right">
+        <div class="row">
+
+
+          <div class="col-lg-6 mt-lg-0 mt-4">
+            <marquee class="text-white" direction="left">© Copyright 2017 - 2019 | KIIT Temple Trust KIIT | All Rights Reserved
+
+            </marquee>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>KTT| Admin Bhoga Bazar</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/bootstrap1.min.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/bootstrap-responsive.min.css' ) }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/fullcalendar.css' ) }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/matrix-style.css' ) }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/matrix-media.css' ) }}" />
+<link href="{{ url_for('static',filename = 'admin_font-awesome/css/font-awesome.css' ) }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/jquery.gritter.css' ) }}" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1></h1>
+</div>
+<!--close-Header-part-->
+
+
+<!--top-Header-menu-->
+
+<!--close-top-Header-menu-->
+<!--start-top-serch-->
+
+<!--close-top-serch-->
+<!--sidebar-menu-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i></a>
+  <ul>
+    <li class="active"><a href="/adminbhoga"><span>Bhoga Bazar</span></a></li>
+    <li> <a href="/admindonation"> <span>Donation</span></a> </li>
+    <li> <a href="/adminhallbook"> <span>Anand Bazar</span></a> </li>
+
+      <li class=""><a title="" href="/adminlogout"><span class="text">Logout</span></a></li>
+
+
+
+  </ul>
+</div>
+<!--sidebar-menu-->
+<br>
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb">
+      <li>
+        <a href="#" title="You are in Party Order" class="tip-bottom"><i class="icon-file"></i>Party Order</a>
+        </li>
+      <a href="/admindaily" title="Go to Daily Thali" class="tip-bottom"><i class="icon-wrench"></i>Daily Thali</a>
+
+      <a href="/adminspecial" title="Go to Special Thali" class="tip-bottom"><i class="icon-wrench"></i>Special Thali</a>
+
+
+    </div>
+  </div>
+<!--End-breadcrumbs-->
+
+<!--Action boxes-->
+  <div class="container-fluid">
+
+
+    <div class="row-fluid">
+        <div class="span12">
+          <div class="widget-box">
+            <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG5" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
+              <h5 id="detbook">Party Booking Details</h5>
+            </div>
+            <div class="widget-content updates collapse in" id="collapseG5">
+              <div class="row-fluid">
+                <br>
+                <form action="/showbhogadetails" method="post">
+                  <div class="span4">
+                    Today's Date  : <p id="date"></p>
+                  </div>
+                <div class="span4">
+
+                      Select Date: <input type="date" name="details">
+                </div>
+                <div class="span4">
+                    <button class="btn btn-success btn-mini">Submit</button>
+                </div>
+                </form>
+             </div>
+             <div class="row-fluid">
+                <br>
+
+                <div class="span12">
+        {% if show_obj %}
+        <div class="widget-content nopadding updates collapse in" id="collapseG1" style="overflow-x: auto; ">
+          <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+               <th>FIRST Name</th>
+              <th>LAST Name</th>
+              <th>Address</th>
+              <th>Email</th>
+              <th>Phone</th>
+               <th>anna</th>
+              <th>kanika</th>
+                <th>jerraanna</th>
+                <th>oriyaanna</th>
+                <th>kamalaanna</th>
+                <th>gheeanna</th>
+                <th>khichudi</th>
+                <th>haradadali</th>
+                <th>mugadali</th>
+                <th>haradadalma</th>
+                <th>mugadalma</th>
+                <th>puridali</th>
+                <th>purimithadali</th>
+                <th>butadali</th>
+                <th>beshar</th>
+                <th>sagamuga</th>
+                <th>bhajachennatarkari</th>
+                <th>panneertarkari</th>
+                <th>pannerbuta</th>
+                <th>mahura</th>
+                <th>potalabesanatarkari</th>
+                <th>potalarasha</th>
+                <th>janhitarkari</th>
+                <th>butatarkari</th>
+                <th>chips</th>
+                <th>kadalibhaja</th>
+                <th>potalakurma</th>
+                <th>ambularai</th>
+                <th>khajurikhatta</th>
+                <th>dahibaigana</th>
+                <th>sapurikhatta</th>
+                <th>fruitsalad</th>
+                <th>ambakhatta</th>
+                <th>ouukhatta</th>
+                <th>dahibundi</th>
+                <th>khira</th>
+                <th>khiree</th>
+                <th>price</th>
+                <th>type_of_order</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for o in show_obj %}
+               <tr>
+                  <td>{{ o.firstname }}</td>
+                  <td>{{ o.lastname }}</td>
+                  <td>{{ o.address }}</td>
+                  <td>{{ o.email }}</td>
+                  <td>{{ o.phone }}</td>
+                  <td>{{ o.anna }}</td>
+                  <td>{{ o.kanika }}</td>
+                  <td>{{ o.jerraanna }}</td>
+                  <td>{{ o.oriyaanna }}</td>
+                  <td>{{ o.kamalaanna }}</td>
+                  <td>{{ o.gheeanna }}</td>
+                  <td>{{ o.khichudi }} </td>
+                  <td>{{ o.haradadali }}</td>
+                 <td>{{ o.mugadali }}</td>
+                  <td>{{ o.haradadalma }}</td>
+                 <td>{{ o.mugadalma }}</td>
+                  <td>{{ o.puridalma }}</td>
+                   <td>{{ o.purimithadali }}</td>
+                 <td>{{ o.butadali }}</td>
+                 <td>{{ o.beshar }}</td>
+                <td>{{ o.sagamuga }}</td>
+                 <td>{{ o.bhajachennatarkari }}</td>
+                 <td>{{ o.panneertarkari }}</td>
+                  <td>{{ o.pannerbuta }}</td>
+                 <td>{{ o.mahura }}</td>
+                  <td>{{ o.potalabesanatarkari }}</td>
+                 <td>{{ o.potalarasha }}</td>
+                 <td>{{ o.janhitarkari }}</td>
+                 <td>{{ o.butatarkari }}</td>
+                 <td>{{ o.chips }}</td>
+                 <td>{{ o.kadalibhaja }}</td>
+                  <td>{{ o.potalakurma }}</td>
+                 <td>{{ o.ambularai }}</td>
+                  <td>{{ o.khajurikhatta }}</td>
+                   <td>{{ o.dahibaigana }}</td>
+                   <td>{{ o.sapurikhatta }}</td>
+                   <td>{{ o.fruitsalad }}</td>
+                    <td>{{ o.ambakhatta }}</td>
+                   <td>{{ o.ouukhatta }}</td>
+                    <td>{{ o.dahibundi }}</td>
+                   <td>{{ o.khira }}</td>
+                    <td>{{ o.khiree }}</td>
+                   <td>{{ o.price }}</td>
+                    <td>{{ o.type_of_order }}</td>
+ </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      {% endif %}
+                </div>
+            </div>
+
+             </div>
+           </div>
+         </div>
+      </div>
+      </div>
+    </div>
+</div>
+<!--end-main-container-part-->
+
+<!--Footer-part-->
+
+<div class="row-fluid">
+  <div id="footer" class="span12">  <marquee class="text-white" direction="left">© Copyright 2017 - 2019 | KIIT Temple Trust KIIT | All Rights Reserved
+
+            </marquee> </div>
+</div>
+
+<!--end-Footer-part-->
+
+<script src="{{ url_for('static',filename = 'admin_js/excanvas.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.flot.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.flot.resize.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.dashboard.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.gritter.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.ui.custom.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.peity.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/fullcalendar.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.interface.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.chat.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.validate.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.form_validation.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.wizard.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.uniform.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/select2.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.popover.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.tables.js') }}"></script>
+<script type="text/javascript">
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
+<script type="text/javascript">
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
+
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();
+          }
+          // else, send page to designated URL
+          else {
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+</script>
+</body>
+</html>

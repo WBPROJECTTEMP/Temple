@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>KTT | Daily Thali | Bhoga Bazar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!-- Custom Theme files -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="{{ url_for('static',filename = 'css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" media="all">
+  <link href="{{ url_for('static',filename = 'css/style.css') }}" type="text/css" rel="stylesheet" media="all">
+  <link href="{{ url_for('static',filename = 'css/style1.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- navigation -->
+  <link href="{{ url_for('static',filename = 'css/nav.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- banner slider -->
+  <link href="{{ url_for('static',filename = 'css/css_slider.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- font-awesome icons -->
+  <link href="{{ url_for('static',filename = 'css/font-awesome.min.css') }}" rel="stylesheet">
+  <!-- //Custom Theme files -->
+  <!-- online-fonts -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Charm|Kaushan+Script" rel="stylesheet">
+  <!-- Common js -->
+  <script src="{{ url_for('static',filename = 'js/jquery-2.2.3.min.js') }}"></script>
+
+
+
+</head>
+
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+  <!-- header -->
+  <div class="main-nav">
+<div class="content white agile-info">
+
+  <nav class="mnu navbar-light">
+
+      <img src="static/images/KIIT-Temple_logo.jpg" >
+
+    <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+    <input type="checkbox" id="drop">
+    <ul class="menu">
+    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Overview</a>
+        <div class="dropdown-content  show">
+          <a href="/about" class="nav-link">About KTT</a>
+          <a class="nav-link" href="/founder">Founder</a>
+          <a href="https://kiit.ac.in/" class="nav-link">KIIT</a>
+          <a href="https://www.kiss.ac.in/" class="nav-link">KISS</a>
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Puja</a>
+        <div class="dropdown-content  show">
+          <a href="/puja" class="nav-link">Architecture</a>
+          <a class="nav-link" href="/festivals">Festivals</a>
+          <a href="/rituals" class="nav-link">Rituals</a>
+          <a href="/deities" class="nav-link">Deities</a>
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Services</a>
+        <div class="dropdown-content  show">
+          <a href="/hall" class="nav-link">Ananda Bazar</a>
+          <a href="/bhoga" class="nav-link">Bhoga Bazar</a>
+          {% if login_session %}
+          <a href="/amtdonate" class="nav-link">Donation</a>
+          {% else %}
+          <a href="/donation" class="nav-link">Donation</a>
+          {% endif %}
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Humanatarian Services</a>
+        <div class="dropdown-content  show">
+          <a href="/education" class="nav-link">Education</a>
+          <a class="nav-link" href="/health">Health & Wellness</a>
+          <a href="/environment" class="nav-link">Environment</a>
+          <a href="/family" class="nav-link">Family & Community Welfare</a>
+          <a href="/rural" class="nav-link">Rural Development</a>
+        </div>
+      </li>
+      {% if login_session %}
+      <li class="nav-item"><a class="nav-link" href="/amtdonate">Donation</a></li>
+      {% else %}
+      <li class="nav-item"><a class="nav-link" href="/donation">Donation</a></li>
+      {% endif %}
+                  <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                  <li class="dropdown nav-item"><a  class="nav-link" href="/contact">Contact Us</a>
+                    <div class="dropdown-content show">
+                      <a href="/contact" class="nav-link">Feedback</a>
+                      <a class="nav-link" href="/contact">Complaint</a>
+                    </div>
+                  </li>
+      {% if login_session %}
+      <li class="nav-item"><a class="nav-link" href="/logout">LogOUT</a></li>
+      {% else %}
+      <li class="nav-item"><a class="nav-link" href="/donation">LogIN</a></li>
+      {% endif %}
+              </ul>
+  </nav>
+
+</div>
+</div>
+  <div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+
+      <h2 class="title-inner">
+          <br>
+        Bhoga Bazar
+
+      </h2>
+
+
+    </div>
+    <!-- //banner-text -->
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <!-- main -->
+  <div>
+    <div class="row">
+
+      <div class="col-md-12">
+        <form action="/dailythali" method="post">
+          <div id="about" style="margin-top:30px;" class="mainbox aboutbox text-center">
+            <div class="panel"><br>
+              <div class="container">
+                <h4 class="rad-txt" style=" padding: 18px;
+            text-shadow: 0px 3px 2px black;
+            color: white;
+            font-weight: bolder;
+
+            font-size: 38px;font-family: 'Cinzel', serif">
+                  Daily Thali
+
+                </h4>
+                <div class="row">
+                  <div class="col-md-4">
+                    <img src="static/images/ktt16.jpg" width="100%"><br><br><img src="static/images/ktt14.jpg" width="100%">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Roboto',sans-serif;background-color:#787934bd;">
+
+                      <div class="col-md-12" style="margin-top:20px;">
+
+
+
+
+                        <label for="test1">Item-1: Anna (RICE)</label>
+
+                      </div>
+
+
+
+                    </div>
+                    <br>
+                    <div class="row" style="padding:5px;margin-left: 15px;font-family:  'Roboto',sans-serif; background-color:#787934bd;">
+
+                      <div class="col-md-12" style="margin-top:20px;">
+
+
+
+                        <label for="test2">Item-2: Harada Dali</label>
+
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row" style="padding:5px;margin-left: 15px;background-color:#787934bd;font-family:  'Roboto',sans-serif; ">
+
+                      <div class="col-md-12" style="margin-top:20px;">
+
+
+
+
+                        <label for="test3">Item-3: Beshar</label>
+
+                      </div>
+                    </div><br>
+                    <div class="row" style="padding:5px;margin-left: 15px; background-color:#787934bd; font-family:  'Roboto',sans-serif; ">
+
+                      <div class="col-md-12" style="margin-top:20px;">
+
+
+
+
+                        <label for="test4">Item-4: Ambula Rai</label>
+
+                      </div>
+                    </div><br>
+                    <div class="row" style="padding:5px;margin-left: 15px; background-color:#787934bd; font-family:  'Roboto',sans-serif; ">
+
+                      <div class="col-md-12" style="margin-top:20px;">
+
+
+
+
+                        <label for="test5">Item-5: Khiraa</label>
+
+                      </div>
+                    </div><br>
+                    <div class="row" style="padding:5px;margin-left: 15px; background-color:#787934bd; font-family:  'Roboto',sans-serif; ">
+
+                      <div class="col-md-12" style="margin-top:20px;">
+
+
+
+
+                        <label for="test6">Item-6: Dahi Bundi</label>
+
+                      </div>
+                    </div><br>
+                    <div class="row" style="padding:5px;margin-left: 5px;  font-family:  'Roboto',sans-serif;  ">
+                      <div class="col-md-3" style="margin-top:5px;">
+
+                        <label for="price">Total Price</label>
+                        <p style="color:white; font-size:1.25em;">Rs.{{ qtyprasad.price }}/- per thali</p>
+                      </div>
+
+
+                      <div class="col-md-5" style="margin-top:5px;">
+
+                        <label for="Quantity Available"> Available Quantity</label>
+                        <input type="number"  style="background-color: aqua;" id="qa6" class="form-control" min="0" placeholder="{{ qtyprasad.anna }}" onfocus="this.placeholder = '{{ qtyprasad.anna }}'" onblur="this.placeholder = '{{ qtyprasad.anna }}'" readonly>
+                      </div>
+                      <div class="col-md-4" style="margin-top:5px;">
+
+                        <label for="Quantity ">Choose Quantity</label>
+                        <input type="number" id="qty" name="qty" class="form-control" min="0" placeholder="0" onfocus="this.placeholder = ''" onblur="this.placeholder = '0'" required>
+                      </div><br><br><br>
+                    </div>
+                    <div class="row" style="padding:5px;margin-left: 5px;  font-family:  'Roboto',sans-serif;  ">
+                      <div class="col-md-4">
+                        <label for="service">Type of Service</label>
+                      </div>
+                      <div class="col-md-6">
+
+
+                        <select id="service" name="service" class="form-control" required>
+                          <option selected value="temple_premise">Temple Premise</option>
+                          <option value="home">Home Delivery</option>
+
+                        </select>
+
+                      </div>
+                    </div><br>
+
+                    <div class="row" style="padding: 5px; center;font-family:  'Roboto',sans-serif;">
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary1">Buy</button>
+                        <button href="/bhoga"  class="btn btn-primary1" style="background-color: #856404;border-color: #856404;">Register(if not)</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          </form>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <br>
+  <footer class="bg-theme1">
+    <div class="container-fluid">
+      <div class="cpy-right">
+        <div class="row">
+
+
+          <div class="col-lg-6 mt-lg-0 mt-4">
+            <marquee class="text-white" direction="left">© Copyright 2017 - 2019 | KIIT Temple Trust KIIT | All Rights Reserved
+
+            </marquee>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+</html>

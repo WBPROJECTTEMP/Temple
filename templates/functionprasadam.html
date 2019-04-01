@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>KTT | Marriage & Party | Bhoga Bazar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!-- Custom Theme files -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="{{ url_for('static',filename = 'css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" media="all">
+  <link href="{{ url_for('static',filename = 'css/style.css') }}" type="text/css" rel="stylesheet" media="all">
+  <link href="{{ url_for('static',filename = 'css/style1.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- navigation -->
+  <link href="{{ url_for('static',filename = 'css/nav.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- banner slider -->
+  <link href="{{ url_for('static',filename = 'css/css_slider.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- font-awesome icons -->
+  <link href="{{ url_for('static',filename = 'css/font-awesome.min.css') }}" rel="stylesheet">
+  <!-- //Custom Theme files -->
+  <!-- online-fonts -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Charm|Kaushan+Script" rel="stylesheet">
+  <!-- Common js -->
+  <script src="{{ url_for('static',filename = 'js/jquery-2.2.3.min.js') }}"></script>
+
+</head>
+
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+  <!-- header -->
+ <div class="main-nav">
+<div class="content white agile-info">
+
+  <nav class="mnu navbar-light">
+
+      <img src="static/images/KIIT-Temple_logo.jpg" >
+
+    <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+    <input type="checkbox" id="drop">
+    <ul class="menu">
+    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Overview</a>
+        <div class="dropdown-content  show">
+          <a href="/about" class="nav-link">About KTT</a>
+          <a class="nav-link" href="/founder">Founder</a>
+          <a href="https://kiit.ac.in/" class="nav-link">KIIT</a>
+          <a href="https://www.kiss.ac.in/" class="nav-link">KISS</a>
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Puja</a>
+        <div class="dropdown-content  show">
+          <a href="/puja" class="nav-link">Architecture</a>
+          <a class="nav-link" href="/festivals">Festivals</a>
+          <a href="/rituals" class="nav-link">Rituals</a>
+          <a href="/deities" class="nav-link">Deities</a>
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Services</a>
+        <div class="dropdown-content  show">
+          <a href="/hall" class="nav-link">Ananda Bazar</a>
+          <a href="/bhoga" class="nav-link">Bhoga Bazar</a>
+          {% if login_session %}
+          <a href="/amtdonate" class="nav-link">Donation</a>
+          {% else %}
+          <a href="/donation" class="nav-link">Donation</a>
+          {% endif %}
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Humanatarian Services</a>
+        <div class="dropdown-content  show">
+          <a href="/education" class="nav-link">Education</a>
+          <a class="nav-link" href="/health">Health & Wellness</a>
+          <a href="/environment" class="nav-link">Environment</a>
+          <a href="/family" class="nav-link">Family & Community Welfare</a>
+          <a href="/rural" class="nav-link">Rural Development</a>
+        </div>
+      </li>
+      {% if login_session %}
+      <li class="nav-item"><a class="nav-link" href="/amtdonate">Donation</a></li>
+      {% else %}
+      <li class="nav-item"><a class="nav-link" href="/donation">Donation</a></li>
+      {% endif %}
+                  <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                  <li class="dropdown nav-item"><a  class="nav-link" href="/contact">Contact Us</a>
+                    <div class="dropdown-content show">
+                      <a href="/contact" class="nav-link">Feedback</a>
+                      <a class="nav-link" href="/contact">Complaint</a>
+                    </div>
+                  </li>
+      {% if login_session %}
+      <li class="nav-item"><a class="nav-link" href="/logout">LogOUT</a></li>
+      {% else %}
+      <li class="nav-item"><a class="nav-link" href="/donation">LogIN</a></li>
+      {% endif %}
+              </ul>
+  </nav>
+
+</div>
+</div>
+
+  <div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+
+      <h2 class="title-inner">
+          <br>
+        Bhoga Bazar
+
+      </h2>
+      <h2 class="title-inner">
+        Marriage and Party Orders
+
+      </h2>
+
+
+    </div>
+    <!-- //banner-text -->
+  </div>
+
+  <!-- main -->
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+        <form action="/functionprasad" method="post">
+          <div id="about" style="margin-top:30px;" class="mainbox aboutbox text-center">
+            <div class="panel"><br>
+              <div class="container">
+                <h4 class="rad-txt" style=" padding: 18px;
+            text-shadow: 0px 3px 2px black;
+            color: white;
+            font-weight: bolder;
+
+            font-size: 38px;font-family: 'Cinzel', serif">
+                  ANNA MAHAPRASAD
+
+                </h4>
+                <div class="row" style="padding:9px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno">Sl.no</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name">Name</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price">Price</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="select">Select</label>
+
+                  </div>
+
+                </div>
+                <br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno11">1</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name11">Anna(RICE)</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price11">₹{{ obj[0].anna }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item11" name="item" value="anna" />
+
+
+                    <label for="item11"></label>
+
+                  </div>
+
+                </div>
+                <br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno12">2</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name12">Kanika(Sweet Rice)</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-3px;">
+
+                    <label for="price12">₹{{ obj[0].kanika }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-3px;">
+
+                    <input type="checkbox" id="item12" name="item" value="kanika" />
+
+
+                    <label for="item12"></label>
+
+                  </div>
+
+                </div>
+                <br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno13">3</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name13">Jerra Anna(Jeera Rice)</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price13">₹{{ obj[0].jerraanna }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <input type="checkbox" id="item13" name="item" value="jerraanna" />
+
+
+                    <label for="item13"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno14">4</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name14">Oriya</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price14">₹{{ obj[0].oriyaanna }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-16px;">
+
+                    <input type="checkbox" id="item14" name="item" value="oriyaanna" />
+
+
+                    <label for="item14"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno15">5</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name15">Kamala Anna(Lemon Rice)</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price15">₹{{ obj[0].kamalaanna }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <input type="checkbox" id="item15" name="item" value="kamalaanna" />
+
+
+                    <label for="item15"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno16">6</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name16">Gheea Anna(Ghee Rice)</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price16">₹{{ obj[0].gheeanna }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <input type="checkbox" id="item16" name="item" value="gheeanna" />
+
+
+                    <label for="item16"></label>
+
+                  </div>
+
+                </div><br>
+
+
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno17">7</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name17">Khichudi</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price17">₹{{ obj[0].khichudi }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item17" name="item" value="khichudi" />
+
+
+                    <label for="item17"></label>
+
+                  </div>
+
+                </div><br>
+                <h4 class="rad-txt" style=" padding: 18px;
+text-shadow: 0px 3px 2px black;
+color: white;
+font-weight: bolder;
+
+font-size: 38px;font-family: 'Cinzel', serif">
+                  DALI
+
+                </h4><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno21">1</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name21">Harada Dali</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price21">₹{{ obj[0].haradadali }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item21" name="item" value="haradadali" />
+
+
+                    <label for="item21"></label>
+
+                  </div>
+
+                </div>
+                <br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno22">2</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name22">Muga Dali</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-3px;">
+
+                    <label for="price22">₹{{ obj[0].mugadali }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item22" name="item" value="mugadali" />
+
+
+                    <label for="item22"></label>
+
+                  </div>
+
+                </div>
+                <br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno23">3</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name23">Harada Dalma</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price23">₹{{ obj[0].haradadalma }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item23" name="item" value="haradadalma" />
+
+
+                    <label for="item23"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno24">4</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name24">Muga Dalma</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price24">₹{{ obj[0].mugadalma }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item24" name="item" value="mugadalma" />
+
+
+                    <label for="item24"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno25">5</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name25">Puri Dalma</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price25">₹{{ obj[0].puridalma }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item25" name="item" value="puridalma" />
+
+
+                    <label for="item25"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno26">6</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name26">Puri Mitha Dali</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price26">₹{{ obj[0].purimithadali }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item26" name="item" value="purimithadali" />
+
+
+                    <label for="item26"></label>
+
+                  </div>
+
+                </div><br>
+
+
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno27">7</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name27">Buta Dali</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price27">₹{{ obj[0].butadali }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item27" name="item" value="butadali" />
+
+
+                    <label for="item27"></label>
+
+                  </div>
+
+                </div><br>
+                <h4 class="rad-txt" style=" padding: 24px;
+text-shadow: 0px 3px 2px black;
+color: white;
+font-weight: bolder;
+
+font-size: 38px;font-family: 'Cinzel', serif">
+                  TARAKARI
+
+                </h4><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno31">1</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name31">Beshar</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price31">₹{{ obj[0].beshar }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item31" name="item" value="beshar" />
+
+
+                    <label for="item31"></label>
+
+                  </div>
+
+                </div>
+                <br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno32">2</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name32">Saga Muga</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-3px;">
+
+                    <label for="price32">₹{{ obj[0].sagamuga }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item32" name="item" value="sagamuga" />
+
+
+                    <label for="item32"></label>
+
+                  </div>
+
+                </div>
+                <br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno33">3</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name33">Bhaja Chenna Tarakari</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price33">₹{{ obj[0].bhajachennatarkari }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item33" name="item" value="bhajachennatarkari" />
+
+
+                    <label for="item33"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno34">4</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name34">Paneer Tarakari</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price34">₹{{ obj[0].panneertarkari }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item34" name="item" value="panneertarkari" />
+
+
+                    <label for="item34"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno35">5</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name35">Paneer Buta</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price35">₹{{ obj[0].pannerbuta }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item35" name="item" value="pannerbuta" />
+
+
+                    <label for="item35"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno36">6</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name36">Mahura</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price36">₹{{ obj[0].mahura }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item36" name="item" value="mahura" />
+
+
+                    <label for="item36"></label>
+
+                  </div>
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno37">7</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name37">Potala Besana Tarakari</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price37">₹{{ obj[0].potalabesanatarkari }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item37" value="potalabesanatarkari" name="item" />
+
+
+                    <label for="item37"></label>
+
+                  </div>
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno38">8</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name38">Potala Rasha</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price38">₹{{ obj[0].potalarasha }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item38" name="item" value="potalarasha" />
+
+
+                    <label for="item38"></label>
+
+                  </div>
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno39">9</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name39">Janhi Tarakari</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price39">₹{{ obj[0].janhitarkari }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item39" name="item" value="janhitarkari" />
+
+
+                    <label for="item39"></label>
+
+                  </div>
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno310">10</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name310">Buta Tarakari</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price310">₹{{ obj[0].butatarkari }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item310" name="item" value="butatarkari" />
+
+
+                    <label for="item310"></label>
+
+                  </div>
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno311">11</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name311">Chips</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price311">₹{{ obj[0].chips }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item311" name="item" value="chips" />
+
+
+                    <label for="item311"></label>
+
+                  </div>
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno312">12</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name312">Kadali Bhaja</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price312">₹{{ obj[0].kadalibhaja }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item312" name="item" value="kadalibhaja" />
+
+
+                    <label for="item312"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno313">13</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name313">Potala Kurma</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price313">₹{{ obj[0].potalakurma }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item313" name="item" value="potalakurma" />
+
+
+                    <label for="item313"></label>
+
+                  </div>
+
+                </div><br>
+                <h4 class="rad-txt" style=" padding: 18px;
+text-shadow: 0px 3px 2px black;
+color: white;
+font-weight: bolder;
+
+font-size: 38px;font-family: 'Cinzel', serif">
+                  KHATTA
+
+                </h4><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno41">1</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name41">Ambula Rai</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price41">₹{{ obj[0].ambularai }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item41" name="item" value="ambularai" />
+
+
+                    <label for="item41"></label>
+
+                  </div>
+
+                </div>
+                <br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno42">2</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name42">Khajuri Khatta</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-3px;">
+
+                    <label for="price42">₹{{ obj[0].khajurikhatta }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item42" name="item" value="khajurikhatta" />
+
+
+                    <label for="item42"></label>
+
+                  </div>
+
+                </div>
+                <br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno43">3</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name43">Dahi Baigana</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price43">₹{{ obj[0].dahibaigana }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item43" name="item" value="dahibaigana" />
+
+
+                    <label for="item43"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno44">4</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name44">Sapuri Khatta</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price44">₹{{ obj[0].sapurikhatta }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item44" name="item" value="sapurikhatta" />
+
+
+                    <label for="item44"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno45">5</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name45">Fruit Salad</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price45">₹{{ obj[0].fruitsalad }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item45" name="item" value="fruitsalad" />
+
+
+                    <label for="item45"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno46">6</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name46">Amba Khatta</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price46">₹{{ obj[0].ambakhatta }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item46" name="item" value="ambakhatta" />
+
+
+                    <label for="item46"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno47">7</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name47">Ouu Khatta</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price47">₹{{ obj[0].ouukhatta }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item47" name="item" value="ouukhatta" />
+
+
+                    <label for="item47"></label>
+
+                  </div>
+
+                </div><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno48">8</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name48">Dahi Bundi</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price48">₹{{ obj[0].dahibundi }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item48" name="item" value="dahibundi" />
+
+
+                    <label for="item48"></label>
+
+                  </div>
+
+                </div><br>
+                <h4 class="rad-txt" style=" padding: 18px;
+text-shadow: 0px 3px 2px black;
+color: white;
+font-weight: bolder;
+
+font-size: 38px;font-family: 'Cinzel', serif">
+                  MITHA
+
+                </h4><br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno51">1</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                    <label for="name51">Khiraa</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:5px;">
+
+                    <label for="price51">₹{{ obj[0].khira }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item51" name="item" value="khira" />
+
+
+                    <label for="item51"></label>
+
+                  </div>
+
+                </div>
+                <br>
+                <div class="row" style="padding:24px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                  <div class="col-md-2" style="margin-top:5px;">
+
+                    <label for="slno52">2</label>
+
+                  </div>
+                  <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                    <label for="name52">Khiree</label>
+
+
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-3px;">
+
+                    <label for="price52">₹{{ obj[0].khiree }}</label>
+
+                  </div>
+                  <div class="col-md-3" style="margin-top:-14px;">
+
+                    <input type="checkbox" id="item52" name="item" value="khiree" />
+
+
+                    <label for="item52"></label>
+
+                  </div>
+
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-md-5">
+                    <label for="nguest">No. of guest expected</label>
+                  </div>
+                  <div class="col-md-4">
+
+
+                    <input type="number" id="nguest" value="0" name="qty1" class="form-control" placeholder="Enter the no of persons" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the no of persons'" required>
+                  </div>
+                </div><br><br>
+              </div>
+
+
+              <div class="row" style="padding: 5px;  text-align=" center";font-family: 'Kaushan Script' , cursive;">
+                <div class="col-md-12">
+                  <button type="submit"  class="btn btn-primary1">BUY</button>
+                  <button type="back" href="/" class="btn btn-primary1" style="background-color: #856404;border-color: #856404;">Register(if not)</button>
+                </div>
+              </div><br>
+            </div>
+
+
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+  <br>
+  <footer class="bg-theme1">
+    <div class="container-fluid">
+      <div class="cpy-right">
+        <div class="row">
+
+
+          <div class="col-lg-6 mt-lg-0 mt-4">
+            <marquee class="text-white" direction="left">© Copyright 2017 - 2019 | KIIT Temple Trust KIIT | All Rights Reserved
+
+            </marquee>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+</html>

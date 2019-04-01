@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>KTT | Hall Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@1.8.3/lib/node-jquery.js"></script>
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js> </script> <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <!-- Custom Theme files -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="{{url_for('static',filename = 'css/bootstrap.min.css')}}" type="text/css" rel="stylesheet" media="all">
+
+  <link href="{{ url_for('static',filename = 'css/style.css')}}" type="text/css" rel="stylesheet" media="all">
+  <link href="{{ url_for('static',filename = 'css/style1.css')}}" type="text/css" rel="stylesheet" media="all">
+  <!-- navigation -->
+  <link href="{{ url_for('static',filename = 'css/nav.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- banner slider -->
+  <link href="{{ url_for('static',filename = 'css/css_slider.css')}}" type="text/css" rel="stylesheet" media="all">
+  <!-- font-awesome icons -->
+  <link href="{{ url_for('static',filename = 'css/font-awesome.min.css')}}" rel="stylesheet">
+  <!-- //Custom Theme files -->
+  <!-- online-fonts -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <!-- checkbox -->
+  <script>
+    function chbx(obj)
+  {
+  var that = obj;
+   if(document.getElementById(that.id).checked == true) {
+      document.getElementById('Afternoon Booking').checked = false;
+      document.getElementById('Evening Booking').checked = false;
+        document.getElementById('Full Day Booking').checked = false;
+
+      document.getElementById(that.id).checked = true;
+   }
+  }
+  </script>
+  <!-- Common js -->
+  <script src="{{ url_for('static',filename = 'js/jquery-2.2.3.min.js') }}"></script>
+
+</head>
+
+<body>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  document.getElementById("myBtn").style.display = "block";
+} else {
+  document.getElementById("myBtn").style.display = "none";
+}
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+}
+</script>
+  <script>
+    function check() {
+  if(document.getElementById("btn1").checked = true){
+    $('#btn1').prop('disabled', false);
+  
+  } else {
+    $('#btn1').prop('enabled', true);
+  }
+});
+</script>
+  <script>
+    function scrollWin() {
+  window.scrollBy(0, 170);
+}
+</script>
+
+  <!-- header -->
+  <header>
+    <div class="main-nav">
+      <div class="content white agile-info">
+
+        <nav class="mnu navbar-light">
+
+          <img src="static/images/KIIT-Temple_logo.jpg">
+
+          <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+          <input type="checkbox" id="drop">
+          <ul class="menu">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="dropdown nav-item"><a class="nav-link" href="#">Overview</a>
+              <div class="dropdown-content  show">
+                <a href="/about" class="nav-link">About KTT</a>
+                <a class="nav-link" href="/founder">Founder</a>
+                <a href="https://kiit.ac.in/" class="nav-link">KIIT</a>
+                <a href="https://www.kiss.ac.in/" class="nav-link">KISS</a>
+              </div>
+            </li>
+            <li class="dropdown nav-item"><a class="nav-link" href="#">Puja</a>
+              <div class="dropdown-content  show">
+                <a href="/puja" class="nav-link">Architecture</a>
+                <a class="nav-link" href="/festivals">Festivals</a>
+                <a href="/rituals" class="nav-link">Rituals</a>
+                <a href="/deities" class="nav-link">Deities</a>
+              </div>
+            </li>
+            <li class="dropdown nav-item"><a class="nav-link" href="#">Services</a>
+              <div class="dropdown-content  show">
+                <a href="/hall" class="nav-link">Ananda Bazar</a>
+                <a href="/bhoga" class="nav-link">Bhoga Bazar</a>
+                {% if login_session %}
+                <a href="/amtdonate" class="nav-link">Donation</a>
+                {% else %}
+                <a href="/donation" class="nav-link">Donation</a>
+                {% endif %}
+              </div>
+            </li>
+            <li class="dropdown nav-item"><a class="nav-link" href="#">Humanatarian Services</a>
+              <div class="dropdown-content  show">
+                <a href="/education" class="nav-link">Education</a>
+                <a class="nav-link" href="/health">Health & Wellness</a>
+                <a href="/environment" class="nav-link">Environment</a>
+                <a href="/family" class="nav-link">Family & Community Welfare</a>
+                <a href="/rural" class="nav-link">Rural Development</a>
+              </div>
+            </li>
+            {% if login_session %}
+            <li class="nav-item"><a class="nav-link" href="/amtdonate">Donation</a></li>
+            {% else %}
+            <li class="nav-item"><a class="nav-link" href="/donation">Donation</a></li>
+            {% endif %}
+            <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+            <li class="dropdown nav-item"><a class="nav-link" href="/contact">Contact Us</a>
+              <div class="dropdown-content show">
+                <a href="/contact" class="nav-link">Feedback</a>
+                <a class="nav-link" href="/contact">Complaint</a>
+              </div>
+            </li>
+            {% if login_session %}
+            <li class="nav-item"><a class="nav-link" href="/logout">LogOUT</a></li>
+            {% else %}
+            <li class="nav-item"><a class="nav-link" href="/donation">LogIN</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+
+
+      </div>
+    </div>
+  </header>
+
+
+
+
+  <div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+
+      <h2 class="title-inner">
+        <br>
+        Ananda Bazar
+
+      </h2>
+
+
+    </div>
+    <!-- //banner-text -->
+  </div><br><br>
+
+
+
+
+
+
+
+
+
+
+  <!-- main -->
+  <div>
+    <form action="/hallop" method="post">
+      <div id="about" style="margin-top:30px;" class="mainbox aboutbox text-center">
+        <div class="panel "><br>
+          <div class="container">
+            <h4 class="rad-txt" style="padding: 5px;
+    color: white;
+    text-shadow: 2px 3px 2px black;
+    font-size: 35px;
+    font-weight: bolder;">
+              Hall Details
+
+            </h4>
+
+
+
+            <div class="row">
+              <div class="col-md-12">
+
+                <div class="caption">
+                  <h2 style="padding: 10px;
+    text-shadow: 0px 3px 2px black;
+    color: orange;
+    font-weight: bolder;
+
+    font-size: 25px;"> Select a Hall to Continue </h2>
+
+                </div>
+              </div>
+            </div>
+            <h5 style="padding: 5px;
+    text-shadow: 0px 3px 2px black;
+    color: white;
+    font-weight: bolder;
+
+    font-size: 17px;">We provide 4 halls</h5>
+            <div class="row" style="padding:5px; margin-top: 1em;">
+              <div class="col-md-3">
+                <div class="card" style="width:auto;border-radius: 10px;">
+                  <img class="card-img-top" src="static\images\hall.jpg" alt="Card image cap" style="width:100%; padding: 3px;border-radius: 10px;">
+                  <div class="card-body">
+                    <div class="custom-control">
+                      {% if kk[0] != 'unoccupied' and kk[1] != 'unoccupied' %}
+                      <input type="checkbox" class="custom-control-input" id="h1" name="hall" value="hall1" onclick="scrollWin()" disabled />
+                      {% else %}
+                      <input type="checkbox" data-toggle="collapse" data-target="#demo1" class="custom-control-input" id="h1" name="hall" value="hall1" onclick="scrollWin()" />
+                      {% endif %}
+
+                      <label class="custom-control-label" for="h1" style="
+                      color: black;
+                      text-shadow: none;">Hall 1</label>
+                    </div>
+                    <br>
+                    <h5 style="padding: 5px;  color: brown;
+                                font-weight: bolder;
+                                font-size: 15px;">
+                      <p>Capacity = 400 people </p>
+                      <p>
+                        Price = ₹{{ price_hall[0].hall1_slot1 }}
+                      </p>
+                      <p>2 greenrooms attached</p>
+                      <p>Generator : 16.5kVA</p>
+                      <br><br>
+                    </h5>
+                    <div id="demo1" class="collapse">
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal1" onclick="scrollWin()">Select Slot</button>
+                    </div>
+                    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="demoLabel">Select Slot</h5>
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+
+                          </div>
+                          <div class="modal-body">
+                            <img class="card-img-top" src="static\images\hall.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                            <p style="text-align: justify;font-weight: bold;">A wonerful hall with a capacity of 400 people , air conditioned hall with clean interiors and spacious at an affordablr price. It also conatains mandap for marriage
+                              purposes.</p>
+
+                            {% if kk[0]!='unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h1slot1" name="slot" value="11" disabled>
+                            <label for="h1slot1" style="color: black;;font-size: 15px;text-shadow: none;">Afternoon Booking:
+                            </label>
+                            <input type="text" id="h1slot1" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h1slot1" name="slot" value="11">
+                            <label for="h1slot1" style="color: black;;font-size: 15px;text-shadow: none;">Afternoon Booking:
+                            </label>
+
+                            <input type="text" id="h1slot1" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% endif %}
+
+
+                            {% if kk[1]!='unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h1slot2" name="slot" value="12" disabled>
+                            <label for="h1slot2" style="color: black;;font-size: 15px;text-shadow: none;">Evening Booking:
+                            </label>
+                            <input type="text" id="h1slot2" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h1slot2" name="slot" value="12">
+                            <label for="h1slot2" style="color: black;;font-size: 15px;text-shadow: none;">Evening Booking:</label>
+                            <input type="text" id="h1slot2" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% endif %}
+
+
+                            {% if kk[0] != 'unoccupied' or kk[1] != 'unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h1both" name="slot" value="13" disabled>
+                            <label for="h1both" style="color: black;;font-size: 15px;text-shadow: none;">Full Day:</label>
+
+                            <input type="text" id="h1both" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h1both" name="slot" value="13">
+                            <label for="h1both" style="color: black;;font-size: 15px;text-shadow: none;">Full Day:</label>
+
+                            <input type="text" id="h1both" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            {% endif %}
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="col-md-3">
+                <div class="card" style="width:auto;border-radius: 10px;">
+                  <img class="card-img-top" src="static\images\hall.jpg" alt="Card image cap" style="width:100%; padding: 3px;border-radius: 10px;">
+                  <div class="card-body">
+
+                    <div class="custom-control">
+                      {% if kk[2] != 'unoccupied' and kk[3] != 'unoccupied' %}
+                      <input type="checkbox" class="custom-control-input" id="h2" name="hall" value="hall2" onclick="scrollWin()" disabled />
+                      {% else %}
+                      <input type="checkbox" data-toggle="collapse" data-target="#demo2" class="custom-control-input" id="h2" name="hall" value="hall2" onclick="scrollWin()" />
+                      {% endif %}
+
+                      <label class="custom-control-label" for="h2" style="
+                  color: black;
+                  text-shadow: none;">Hall 2</label>
+                    </div><br>
+                    <h5 style="padding: 5px;
+
+color: brown;
+font-weight: bolder;
+
+font-size: 15px;">
+                      <p>Capacity = 300 people </p>
+                      <p>
+                        Price = {{ price_hall[0].hall2_slot1 }}
+                      </p>
+                      <p>3 greenrooms attached</p>
+                      <p>Generator : 16.5kVA</p>
+                      <br><br>
+                    </h5>
+
+
+                    <div id="demo2" class="collapse">
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2" onclick="scrollWin()">Select Slot</button>
+                    </div>
+                    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="demoLabel">Select Slot</h5>
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+
+                          </div>
+                          <div class="modal-body">
+                            <img class="card-img-top" src="static\images\hall.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                            <p style="text-align: justify;font-weight: bold;">A wonerful hall with a capacity of 300 people , air conditioned hall with clean interiors and spacious at an affordablr price. It also conatains mandap for marriage
+                              purposes.</p>
+                            {% if kk[2]!='unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h2slot1" name="slot" value="21" disabled>
+                            <label for="h2slot1" style="color: black;;font-size: 15px;text-shadow: none;">Afternoon Booking:</label>
+
+                            <input type="text" id="h2slot1" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h2slot1" name="slot" value="21">
+                            <label for="h2slot1" style="color: black;;font-size: 15px;text-shadow: none;">Afternoon Booking:</label>
+
+                            <input type="text" data-toggle="collapse" data-target="#demo2" id="h2slot1" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% endif %}
+
+                            {% if kk[3]!='unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h2slot2" name="slot" value="22" disabled>
+                            <label for="h2slot2" style="color: black;;font-size: 15px;text-shadow: none;">Evening Booking:</label>
+
+                            <input type="text" id="h2slot2" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h2slot2" name="slot" value="22">
+                            <label for="h2slot2" style="color: black;;font-size: 15px;text-shadow: none;">Evening Booking:</label>
+
+                            <input type="text" id="h2slot2" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% endif %}
+
+                            {% if kk[2] != 'unoccupied' or kk[3] != 'unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h2both" name="slot" value="23" disabled>
+                            <label for="h2both" style="color: black;;font-size: 15px;text-shadow: none;">Full Day:</label>
+
+                            <input type="text" id="h2both" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h2both" name="slot" value="23">
+                            <label for="h2both" style="color: black;;font-size: 15px;text-shadow: none;">Full Day:</label>
+
+                            <input type="text" id="h2both" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            {% endif %}
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="card" style="width:auto;border-radius: 10px;">
+                  <img class="card-img-top" src="static\images\hall.jpg" alt="Card image cap" style="width:100%; padding: 3px;border-radius: 10px;">
+                  <div class="card-body">
+
+
+
+
+                    <div class="custom-control">
+                      {% if kk[4] != 'unoccupied' and kk[5] != 'unoccupied' %}
+                      <input type="checkbox" class="custom-control-input" id="h3" name="hall" value="hall3" onclick="scrollWin()" disabled />
+                      {% else %}
+                      <input type="checkbox" data-toggle="collapse" data-target="#demo3" class="custom-control-input" id="h3" name="hall" value="hall3" onclick="scrollWin()" />
+                      {% endif %}
+
+                      <label class="custom-control-label" for="h3" style="
+  color: black;
+  text-shadow: none;">Hall 3</label>
+                    </div><br>
+
+                    <h5 style="padding: 5px;
+
+                color: brown;
+                font-weight: bolder;
+
+                font-size: 15px;">
+                      <p>Capacity = 450 people </p>
+                      <p>
+                        Price = ₹{{ price_hall[0].hall3_slot1 }}
+                      </p>
+                      <p> 3 greenrooms attached</p>
+                      <p>Generator : 25kVA</p>
+                      <p> Air Conditioned</p>
+                    </h5>
+
+                    <div id="demo3" class="collapse">
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal3" onclick="scrollWin()">Select Slot</button>
+                    </div>
+                    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="demoLabel">Select Slot</h5>
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+
+                          </div>
+                          <div class="modal-body">
+                            <img class="card-img-top" src="static\images\hall.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                            <p style="text-align: justify;font-weight: bold;">A wonerful hall with a capacity of 700 people , air conditioned hall with clean interiors and spacious at an affordablr price. It also conatains mandap for marriage
+                              purposes.</p>
+                            {% if kk[4]!='unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h3slot1" name="slot" value="31" disabled>
+                            <label for="h3slot1" style="color: black;text-shadow: none;font-size: 15px;">Afternoon Booking:</label>
+
+                            <input type="text" id="h3slot1" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h3slot1" name="slot" value="31">
+                            <label for="h3slot1" style="color: black;text-shadow: none;font-size: 15px;">Afternoon Booking:</label>
+
+                            <input type="text" id="h3slot1" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% endif %}
+
+
+                            {% if kk[5]!='unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h3slot2" name="slot" value="32" disabled>
+                            <label for="h3slot2" style="color: black;text-shadow: none;font-size: 15px;">Evening Booking:</label>
+
+                            <input type="text" id="h3slot2" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h3slot2" name="slot" value="32">
+                            <label for="h3slot2" style="color: black;text-shadow: none;font-size: 15px;">Evening Booking:</label>
+
+                            <input type="text" id="h3slot2" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% endif %}
+
+
+                            {% if kk[4] != 'unoccupied' or kk[5] != 'unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h3both" name="slot" value="33" disabled>
+                            <label for="h3both" style="color: black;text-shadow: none;font-size: 15px;">Full Day:</label>
+
+                            <input type="text" id="h3both" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h3both" name="slot" value="33">
+                            <label for="h3both" style="color: black;text-shadow: none;font-size: 15px;">Full Day:</label>
+
+                            <input type="text" id="h3both" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            {% endif %}
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="card" style="width:auto;border-radius: 10px;">
+                  <img class="card-img-top" src="static\images\hall.jpg" alt="Card image cap" style="width:100%; padding: 3px;border-radius: 10px;">
+                  <div class="card-body">
+
+
+                    <div class="custom-control">
+                      {% if kk[6] != 'unoccupied' and kk[7] != 'unoccupied' %}
+                      <input type="checkbox" class="custom-control-input" id="h4" name="hall" value="hall4" onclick="scrollWin()" disabled />
+                      {% else %}
+                      <input type="checkbox" data-toggle="collapse" data-target="#demo4" class="custom-control-input" id="h4" name="hall" onclick="scrollWin()" value="hall4" />
+                      {% endif %}
+
+                      <label class="custom-control-label" for="h4" style="
+  color: black;
+  text-shadow: none;">Hall 4</label>
+                    </div>
+                    <br>
+                    <h5 style="padding: 5px;
+
+                  color: brown;
+                  font-weight: bolder;
+
+                  font-size: 15px;">
+                      <p> Capacity = 450 people </p>
+                      <p>
+                        Price = ₹{{ price_hall[0].hall4_slot1 }}
+                      </p>
+                      <p> 2 Green Rooms attached</p>
+                      <p> Generator : 25kVA</p>
+                      <p> Air Conditioned</p>
+                    </h5>
+
+                    <div id="demo4" class="collapse">
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal4" onclick="scrollWin()">Select Slot</button>
+                    </div>
+                    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="demoLabel">Select Slot</h5>
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+
+                          </div>
+                          <div class="modal-body">
+                            <img class="card-img-top" src="static\images\hall.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                            <p style="text-align: justify;font-weight: bold;">A wonerful hall with a capacity of 350 people , air conditioned hall with clean interiors and spacious at an affordablr price. It also conatains mandap for marriage
+                              purposes.</p>
+
+                            {% if kk[6]!='unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h4slot1" name="slot" value="41" disabled>
+                            <label for="h4slot1" style="color: black;text-shadow: none; font-size: 15px;">Afternoon Booking:</label>
+
+                            <input type="text" id="h4slot1" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h4slot1" name="slot" value="41">
+                            <label for="h4slot1" style="color: black;text-shadow: none; font-size: 15px;">Afternoon Booking:</label>
+
+                            <input type="text" id="h4slot1" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% endif %}
+
+
+                            {% if kk[7]!='unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h4slot2" name="slot" value="42" disabled>
+                            <label for="h4slot2" style="color: black;font-size: 15px;text-shadow: none;">Evening Booking:</label>
+
+                            <input type="text" id="h4slot2" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h4slot2" name="slot" value="42">
+                            <label for="h4slot2" style="color: black;font-size: 15px;text-shadow: none;">Evening Booking:</label>
+
+                            <input type="text" id="h4slot2" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            <br>
+                            {% endif %}
+
+
+                            {% if kk[6] != 'unoccupied' or kk[7] != 'unoccupied' %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h4both" name="slot" value="43" disabled>
+                            <label for="h4both" style="color: black;font-size: 15px;text-shadow: none;">Full Day:</label>
+
+                            <input type="text" id="h4both" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                            {% else %}
+                            <input type="checkbox" class="custom-control-input" style="margin-right:.5em;" id="h4both" name="slot" value="43">
+                            <label for="h4both" style="color: black;font-size: 15px;text-shadow: none;">Full Day:</label>
+
+
+                            <input type="text" id="h4both" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                            {% endif %}
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><br>
+
+
+
+
+              <br><br>
+              <h5 style="padding: 5px;
+    text-shadow: 0px 3px 2px black;
+    color: white;
+    font-weight: bolder;text-align: center;
+
+    font-size: 35px;">We also provide accomodation at KISS Cottage</h5>
+              <div class="row" style="padding: 5px; margin-top: 1em;">
+                <div class="col-md-3">
+                  <div class="card" style="width:auto;border-radius: 10px;">
+                    <img class="card-img-top" src="static\images\guest.jpg" alt="Card image cap" style="width:100%; padding: 3px;border-radius: 10px;">
+                    <div class="card-body">
+
+
+                      <div class="custom-control">
+                        {% if kk[8]!='unoccupied' %}
+                        <input type="checkbox" class="custom-control-input" id="r1" name="room" value="room1" onclick="scrollWin()" disabled />
+                        {% else %}
+                        <input type="checkbox" data-toggle="collapse" data-target="#demo5" class="custom-control-input" id="r1" name="room" value="room1" onclick="scrollWin()" />
+                        {% endif %}
+                        <label class="custom-control-label" for="r1" style="
+    color: black;
+    text-shadow: none;">Room 1</label>
+                      </div>
+                      <br>
+                      <h5 style="padding: 5px;
+
+                  color: brown;
+                  font-weight: bolder;
+
+                  font-size: 15px;">
+                        <p>Price = ₹{{ price_hall[0].room_1 }}
+                        </p>
+                        <p>Air Conditoned</p>
+                        <p>Double Bedded</p>
+                        <p>Amazing Window View</p>
+                      </h5>
+                      <label for="room1" style="color: black;text-shadow: none;">Availability:</label>
+                      {% if kk[8] != 'unoccupied' %}
+                      <input type="text" id="room1" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                      {% else %}
+                      <input type="text" id="room1" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                      {% endif %}
+                      <div id="demo5" class="collapse">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal5" onclick="scrollWin()">View Details</button>
+                      </div>
+                      <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="demoLabel">Room Details</h5>
+
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+
+                            </div>
+                            <div class="modal-body">
+                              <img class="card-img-top" src="static\images\guest.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                              <p style="text-align: justify;font-weight: bold;">A wonerful room for pleasant staying experience</p>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                              </div>
+
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card" style="width:auto;border-radius: 10px;">
+                    <img class="card-img-top" src="static\images\guest.jpg" alt="Card image cap" style="width:100%; padding: 3px;border-radius: 10px;">
+                    <div class="card-body">
+
+
+                      <div class="custom-control ">
+                        {% if kk[9]!='unoccupied' %}
+                        <input type="checkbox" class="custom-control-input" id="r2" name="room" value="room2" onclick="scrollWin()" disabled />
+                        {% else %}
+                        <input type="checkbox" data-toggle="collapse" data-target="#demo6" class="custom-control-input" id="r2" name="room" value="room2" onclick="scrollWin()" />
+                        {% endif %}
+                        <label class="custom-control-label" for="r2" style="
+    color: black;
+    text-shadow: none;">Room 2</label>
+                      </div>
+                      <br>
+                      <h5 style="padding: 5px;
+
+                  color: brown;
+                  font-weight: bolder;
+
+                  font-size: 15px;">
+                        <p>Price = ₹{{ price_hall[0].room_2 }}
+                        </p>
+                        <p>Air Conditoned</p>
+                        <p>Double Bedded</p>
+                        <p>Amazing Window View</p>
+                      </h5>
+                      <label for="room2" style="color: black;text-shadow: none;">Availability:</label>
+                      {% if kk[9] != 'unoccupied' %}
+                      <input type="text" id="room2" class="form-control" placeholder="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                      {% else %}
+                      <input type="text" id="room2" class="form-control" placeholder="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                      {% endif %}
+
+                      <div id="demo6" class="collapse">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal6" onclick="scrollWin()">View Details</button>
+                      </div>
+                      <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="demoLabel">Room Details</h5>
+
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+
+                            </div>
+                            <div class="modal-body">
+                              <img class="card-img-top" src="static\images\guest.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                              <p style="text-align: justify;font-weight: bold;">A wonerful room for pleasant staying experience</p>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                              </div>
+
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card" style="width:auto;border-radius: 10px;">
+                    <img class="card-img-top" src="static\images\guest.jpg" alt="Card image cap" style="width:100%; padding: 3px;border-radius: 10px;">
+                    <div class="card-body">
+
+
+                      <div class="custom-control">
+                        {% if kk[10]!='unoccupied' %}
+                        <input type="checkbox" class="custom-control-input" id="r3" name="room" value="room3" onclick="scrollWin()" disabled />
+                        {% else %}
+                        <input type="checkbox" data-toggle="collapse" data-target="#demo7" class="custom-control-input" id="r3" name="room" value="room3" onclick="scrollWin()" />
+                        {% endif %}
+                        <label class="custom-control-label" for="r3" style="
+    color: black;
+    text-shadow: none;">Room 3</label>
+                      </div>
+                      <br>
+                      <h5 style="padding: 5px;
+
+                  color: brown;
+                  font-weight: bolder;
+
+                  font-size: 15px;">
+                        <p>Price = ₹{{ price_hall[0].room_3 }}
+                        </p>
+                        <p>Air Conditoned</p>
+                        <p>Double Bedded</p>
+                        <p>Amazing Window View</p>
+                      </h5>
+
+                      <label for="room3" style="color: black;text-shadow: none;">Availability:</label>
+                      {% if kk[10] != 'unoccupied' %}
+                      <input type="text" id="room3" class="form-control" placeholder="{{ 'occupied' }}" value="{{ 'occupied' }}" style="background-color:#00ffff59;" readonly>
+                      {% else %}
+                      <input type="text" id="room3" class="form-control" placeholder="{{ 'unoccupied' }}" value="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                      {% endif %}
+
+                      <div id="demo7" class="collapse">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal7" onclick="scrollWin()">View Details</button>
+                      </div>
+                      <div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="demoLabel">Room Details</h5>
+
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+
+                            </div>
+                            <div class="modal-body">
+                              <img class="card-img-top" src="static\images\guest.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                              <p style="text-align: justify;font-weight: bold;">A wonerful room for pleasant staying experience</p>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                              </div>
+
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card" style="width:auto;border-radius: 10px;">
+                    <img class="card-img-top" src="static\images\guest.jpg" alt="Card image cap" style="width:100%;padding: 3px;border-radius: 10px;">
+                    <div class="card-body">
+
+
+                      <div class="custom-control">
+                        {% if kk[11]!='unoccupied' %}
+                        <input type="checkbox" class="custom-control-input" id="r4" name="room" value="room4" onclick="scrollWin()" disabled />
+                        {% else %}
+                        <input type="checkbox" data-toggle="collapse" data-target="#demo8" class="custom-control-input" id="r4" name="room" value="room4" onclick="scrollWin()" />
+                        {% endif %}<input type="checkbox" class="custom-control-input" id="r4" />
+                        <label class="custom-control-label" for="r4" style="
+    color: black;
+    text-shadow: none;">Room 4</label>
+                      </div>
+                      <br>
+                      <h5 style="padding: 5px;
+
+                  color: brown;
+                  font-weight: bolder;
+
+                  font-size: 15px;">
+                        <p>Price = ₹{{ price_hall[0].room_4 }}
+                        </p>
+                        <p>Air Conditoned</p>
+                        <p>Double Bedded</p>
+                        <p>Amazing Window View</p>
+                      </h5>
+                      <label for="room4" style="color: black;text-shadow: none;">Availability:</label>
+                      {% if kk[11] != 'unoccupied' %}
+                      <input type="text" id="room4" class="form-control" placeholder="{{ 'occupied' }}" value="{{ 'occupied' }}" style="background-color:#00ffff59;" disabled>
+                      {% else %}
+                      <input type="text" id="room4" class="form-control" placeholder="{{ 'unoccupied' }}" value="{{ 'unoccupied' }}" style="background-color:#00ffff59;" readonly>
+                      {% endif %}
+                      <div id="demo8" class="collapse">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal8" onclick="scrollWin()">View Details</button>
+                      </div>
+                      <div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="demoLabel">Room Details</h5>
+
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+
+                            </div>
+                            <div class="modal-body">
+                              <img class="card-img-top" src="static\images\guest.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                              <p style="text-align: justify;font-weight: bold;">A wonerful room for pleasant staying experience</p>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                              </div>
+
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div><br><br>
+      <div id="about" style="margin-top:30px;" class="mainbox aboutbox text-center">
+        <div class="panel"><br>
+          <div class="container">
+            <h2 style="padding: 15px;
+          text-shadow: 0px 3px 2px black;
+          color: white;
+          font-weight: bolder;
+
+          font-size: 43px;">Special Decoration Services</h2>
+
+
+          </div><br>
+          <div class="row" style="padding: 5px;">
+
+            <div class="col-md-3">
+              <div class="card" style="width:auto;border-radius: 10px;">
+                <img class="card-img-top" src="static\images\bedi.jpg" alt="Card image cap" style="width:100%; padding: 3px;border-radius: 10px;">
+                <hr />
+                <div class="card-body">
+
+
+                  <div class="custom-control">
+                    <input type="checkbox" data-toggle="collapse" data-target="#demo9" class="custom-control-input" id="defaultInline11" name="deco" value="deco1" onclick="scrollWin()">
+                    <label class="custom-control-label" for="defaultInline11" style="
+        color: black;
+        text-shadow: none;">Decoration 1</label>
+                  </div>
+                  <div class="card-text">Rs.{{ price_hall[0].deco1 }}</div>
+                  <div id="demo9" class="collapse">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal9" onclick="scrollWin()">View Details</button>
+                  </div>
+                  <div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="demoLabel">Decoration Details</h5>
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+
+                        </div>
+                        <div class="modal-body">
+                          <img class="card-img-top" src="static\images\bedi.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                          <p style="text-align: justify;font-weight: bold;">Mesmerizing Decoration</p>
+                          <p style="text-align: justify;font-weight: bold;">Rose and Marigold flowers in Bedi</p>
+                          <p style="text-align: justify;font-weight: bold;">Rs {{ price_hall[0].deco1 }} </p>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card" style="width:auto;border-radius: 10px;">
+                <img class="card-img-top" src="static\images\bedi.jpg" alt="Card image cap" style="width:100%; padding: 3px;border-radius: 10px;">
+                <hr />
+                <div class="card-body">
+
+
+                  <div class="custom-control">
+                    <input type="checkbox" data-toggle="collapse" data-target="#demo10" class="custom-control-input" id="defaultInline12" name="deco" value="deco2" onclick="scrollWin()">
+                    <label class="custom-control-label" for="defaultInline12" style="
+        color: black;
+        text-shadow: none;">Decoration 2</label>
+                  </div>
+                  <div class="card-text">Rs.{{ price_hall[0].deco2 }}</div>
+                  <div id="demo10" class="collapse">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal10" onclick="scrollWin()">View Details</button>
+                  </div>
+                  <div class="modal fade" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="demoLabel">Decoration Details</h5>
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+
+                        </div>
+                        <div class="modal-body">
+                          <img class="card-img-top" src="static\images\bedi.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                          <p style="text-align: justify;font-weight: bold;">Mesmerizing Decoration</p>
+                          <p style="text-align: justify;font-weight: bold;">Rose and Orchid flowers in Bedi</p>
+                          <p style="text-align: justify;font-weight: bold;">Welcome Rose flowers to every guest </p>
+                          <p style="text-align: justify;font-weight: bold;">Rs {{ price_hall[0].deco2 }} </p>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card" style="width:auto;border-radius: 10px;">
+                <img class="card-img-top" src="static\images\bedi.jpg" alt="Card image cap" style="width:100%; padding: 3px;border-radius: 10px;">
+                <hr />
+                <div class="card-body">
+
+
+                  <div class="custom-control">
+                    <input type="checkbox" data-toggle="collapse" data-target="#demo11" class="custom-control-input" id="defaultInline13" name="deco" value="deco3" onclick="scrollWin()">
+                    <label class="custom-control-label" for="defaultInline13" style="
+        color: black;
+        text-shadow: none;">Decoration 3</label>
+                  </div>
+                  <div class="card-text">Rs{{ price_hall[0].deco1 }}</div>
+                  <div id="demo11" class="collapse">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal11" onclick="scrollWin()">View Details</button>
+                  </div>
+                  <div class="modal fade" id="myModal11" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="demoLabel">Decoration Details</h5>
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+
+                        </div>
+                        <div class="modal-body">
+                          <img class="card-img-top" src="static\images\bedi.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                          <p style="text-align: justify;font-weight: bold;">Mesmerizing Decoration</p>
+                          <p style="text-align: justify;font-weight: bold;">Rose ,Marigold, orchid flowers in Bedi</p>
+                          <p style="text-align: justify;font-weight: bold;">Welcome Rose flowers and tilak to every guest </p>
+                          <p style="text-align: justify;font-weight: bold;">Rs {{ price_hall[0].deco3 }} </p>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                          </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card" style="width:auto;border-radius: 10px;">
+
+                <div class="card-body">
+
+                  <div class="card-text">FOR FUTHER DECORATION DO CONTACT THE EVENT IN-CHARGE
+
+                  </div>
+                  <div class="card-text">Name : Mr. Adarsh Dash</div>
+                  <div class="card-text">+91-9876543210</div>
+
+                  <a href="#" class="btn btn-primary1">Contact Us</a>
+
+                </div>
+              </div>
+            </div>
+            <br><br>
+          </div>
+
+
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+      <div id="about" style="margin-top:30px;" class="mainbox aboutbox text-center">
+        <div class="panel"><br>
+          <div class="container">
+            <h2 style="padding: 15px;
+        text-shadow: 0px 3px 2px black;
+        color: white;
+        font-weight: bolder;
+
+        font-size: 43px;">Special Marriage Catering Services</h2>
+
+
+          </div><br>
+          <div class="container" style="
+    padding: 1em;">
+            <div class="card" style="width:auto; border-radius: 10px;">
+              <img class="card-img-top" src="static\images\ktt10.jpg" alt="Card image cap" style="width:100%; padding: 3px; border-radius:10px;">
+              <div class="card-body">
+
+
+                <div class="custom-control">
+                  <input type="checkbox" data-toggle="collapse" data-target="#demo12" class="custom-control-input" id="defaultInline10" name="marriage" value="marriage" onclick="scrollWin()">
+                  <label class="custom-control-label" for="defaultInline10" style=" color: black;text-shadow: none;">Special Marriage Catering Services</label>
+                  <div id="demo12" class="collapse">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal12" onclick="scrollWin()">Select Items</button>
+                  </div>
+                  <div class="modal fade" id="myModal12" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="demoLabel">Select Items</h5>
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+
+                        </div>
+                        <div class="modal-body">
+                          <img class="card-img-top" src="static\images\ktt10.jpg" alt="Card image cap" style="width:80%; padding: 3px;border-radius: 10px;">
+                          <p style="text-align: justify;font-weight: bold;">Hygenically prepared temple food with delicious taste.</p>
+                          <!-- Whole menu should come here but copy and paste isnt working due to dynamic pricing in menu tahts why inserted with fixed static price -->
+                          <div class="cater">
+                            <h4 class="rad-txt" style="    font-weight: bolder;
+    font-size: 25px;">
+                              ANNA MAHAPRASAD
+
+                            </h4><br>
+                            <div class="row">
+                              <div class="col-md-2">
+
+                                <label for="slno">Sl.no<br></label>
+
+                              </div>
+                              <div class="col-md-4">
+
+                                <label for="name">Name<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3">
+
+                                <label for="price">Price<br></label>
+
+                              </div>
+                              <div class="col-md-3">
+
+                                <label for="select">Select<br></label>
+
+                              </div>
+
+                            </div>
+                            <br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno11">1<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name11">Anna(RICE)<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price11">₹{{ obj[0].anna }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <input type="checkbox" id="item11" name="item" value="anna" />
+
+
+                                <label for="item11"><br></label>
+
+                              </div>
+
+                            </div>
+                            <br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno12">2<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name12">Kanika(Sweet Rice)<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <label for="price12">₹{{ obj[0].kanika }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <input type="checkbox" id="item12" name="item" value="kanika" />
+
+
+                                <label for="item12"><br></label>
+
+                              </div>
+
+                            </div>
+                            <br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno13">3<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name13">Jerra Anna(Jeera Rice)<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price13">₹{{ obj[0].jerraanna }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item13" name="item" value="jerraanna" />
+
+
+                                <label for="item13"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno14">4<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name14">Oriya<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price14">₹{{ obj[0].oriyaanna }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item14" name="item" value="oriyaanna" />
+
+
+                                <label for="item14"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno15">5<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name15">Kamala Anna(Lemon Rice)<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price15">₹{{ obj[0].kamalaanna }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item15" name="item" value="kamalaanna" />
+
+
+                                <label for="item15"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno16">6<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name16">Gheea Anna(Ghee Rice)<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price16">₹{{ obj[0].gheeanna }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item16" name="item" value="gheeanna" />
+
+
+                                <label for="item16"><br></label>
+
+                              </div>
+
+                            </div><br>
+
+
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno17">7<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name17">Khichudi<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price17">₹{{ obj[0].khichudi }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item17" name="item" value="khichudi" />
+
+
+                                <label for="item17"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <h4 class="rad-txt" style="    font-weight: bolder;
+    font-size: 25px;">
+                              DALI
+
+                            </h4><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno21">1<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name21">Harada Dali<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price21">₹{{ obj[0].haradadali }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <input type="checkbox" id="item21" name="item" value="haradadali" />
+
+
+                                <label for="item21"><br></label>
+
+                              </div>
+
+                            </div>
+                            <br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno22">2<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name22">Muga Dali<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <label for="price22">₹{{ obj[0].mugadali }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <input type="checkbox" id="item22" name="item" value="mugadali" />
+
+
+                                <label for="item22"><br></label>
+
+                              </div>
+
+                            </div>
+                            <br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno23">3<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name23">Harada Dalma<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price23">₹{{ obj[0].haradadalma }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item23" name="item" value="haradadalma" />
+
+
+                                <label for="item23"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno24">4<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name24">Muga Dalma<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price24">₹{{ obj[0].mugadalma }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item24" name="item" value="mugadalma" />
+
+
+                                <label for="item24"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno25">5<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name25">Puri Dalma<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price25">₹{{ obj[0].puridalma }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item25" name="item" value="puridalma" />
+
+
+                                <label for="item25"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno26">6<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name26">Puri Mitha Dali<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price26">₹{{ obj[0].purimithadali }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item26" name="item" value="purimithadali" />
+
+
+                                <label for="item26"><br></label>
+
+                              </div>
+
+                            </div><br>
+
+
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno27">7<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name27">Buta Dali<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price27">₹{{ obj[0].butadali }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item27" name="item" value="butadali" />
+
+
+                                <label for="item27"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <h4 class="rad-txt" style="    font-weight: bolder;
+    font-size: 25px;">
+                              TARAKARI(CURRY)
+
+                            </h4><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno31">1<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name31">Beshar<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price31">₹{{ obj[0].beshar }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <input type="checkbox" id="item31" name="item" value="beshar" />
+
+
+                                <label for="item31"><br></label>
+
+                              </div>
+
+                            </div>
+                            <br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno32">2<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name32">Saga Muga<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <label for="price32">₹{{ obj[0].sagamuga }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <input type="checkbox" id="item32" name="item" value="sagamuga" />
+
+
+                                <label for="item32"><br></label>
+
+                              </div>
+
+                            </div>
+                            <br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno33">3<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name33">Bhaja Chenna Tarakari<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price33">₹{{ obj[0].bhajachennatarkari }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item33" name="item" value="bhajachennatarkari" />
+
+
+                                <label for="item33"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno34">4<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name34">Paneer Tarakari<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price34">₹{{ obj[0].panneertarkari }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item34" name="item" value="panneertarkari" />
+
+
+                                <label for="item34"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno35">5<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name35">Paneer Buta<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price35">₹{{ obj[0].pannerbuta }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item35" name="item" value="pannerbuta" />
+
+
+                                <label for="item35"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno36">6<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name36">Mahura<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price36">₹{{ obj[0].mahura }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item36" name="item" value="mahura" />
+
+
+                                <label for="item36"><br></label>
+
+                              </div>
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno37">7<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name37">Potala Besana Tarakari<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price37">₹{{ obj[0].potalabesanatarkari }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item37" value="potalabesanatarkari" name="item" />
+
+
+                                <label for="item37"><br></label>
+
+                              </div>
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno38">8<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name38">Potala Rasha<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price38">₹{{ obj[0].potalarasha }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item38" name="item" value="potalarasha" />
+
+
+                                <label for="item38"><br></label>
+
+                              </div>
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno39">9<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name39">Janhi Tarakari<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price39">₹{{ obj[0].janhitarkari }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item39" name="item" value="janhitarkari" />
+
+
+                                <label for="item39"><br></label>
+
+                              </div>
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno310">10<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name310">Buta Tarakari<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price310">₹{{ obj[0].butatarkari }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item310" name="item" value="butatarkari" />
+
+
+                                <label for="item310"><br></label>
+
+                              </div>
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno311">11<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name311">Chips<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price311">₹{{ obj[0].chips }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item311" name="item" value="chips" />
+
+
+                                <label for="item311"><br></label>
+
+                              </div>
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno312">12<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name312">Kadali Bhaja<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price312">₹{{ obj[0].kadalibhaja }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item312" name="item" value="kadalibhaja" />
+
+
+                                <label for="item312"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno313">13<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name313">Potala Kurma<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price313">₹{{ obj[0].potalakurma }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item313" name="item" value="potalakurma" />
+
+
+                                <label for="item313"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <h4 class="rad-txt" style="    font-weight: bolder;
+    font-size: 25px;">
+                              KHATTA
+
+                            </h4><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno41">1<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name41">Ambula Rai<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price41">₹{{ obj[0].ambularai }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <input type="checkbox" id="item41" name="item" value="ambularai" />
+
+
+                                <label for="item41"><br></label>
+
+                              </div>
+
+                            </div>
+                            <br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno42">2<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name42">Khajuri Khatta<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <label for="price42">₹{{ obj[0].khajurikhatta }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <input type="checkbox" id="item42" name="item" value="khajurikhatta" />
+
+
+                                <label for="item42"><br></label>
+
+                              </div>
+
+                            </div>
+                            <br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno43">3<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name43">Dahi Baigana<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price43">₹{{ obj[0].dahibaigana }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item43" name="item" value="dahibaigana" />
+
+
+                                <label for="item43"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno44">4<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name44">Sapuri Khatta<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price44">₹{{ obj[0].sapurikhatta }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item44" name="item" value="sapurikhatta" />
+
+
+                                <label for="item44"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno45">5<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name45">Fruit Salad<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price45">₹{{ obj[0].fruitsalad }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item45" name="item" value="fruitsalad" />
+
+
+                                <label for="item45"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno46">6<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name46">Amba Khatta<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price46">₹{{ obj[0].ambakhatta }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item46" name="item" value="ambakhatta" />
+
+
+                                <label for="item46"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno47">7<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name47">Ouu Khatta<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price47">₹{{ obj[0].ouukhatta }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item47" name="item" value="ouukhatta" />
+
+
+                                <label for="item47"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno48">8<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name48">Dahi Bundi<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price48">₹{{ obj[0].dahibundi }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <input type="checkbox" id="item48" name="item" value="dahibundi" />
+
+
+                                <label for="item48"><br></label>
+
+                              </div>
+
+                            </div><br>
+                            <h4 class="rad-txt" style="    font-weight: bolder;
+    font-size: 25px;">
+                              MITHA
+
+                            </h4><br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno51">1<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px;color:white; font-size:1.25em;">
+
+                                <label for="name51">Khiraa<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:5px;">
+
+                                <label for="price51">₹{{ obj[0].khira }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <input type="checkbox" id="item51" name="item" value="khira" />
+
+
+                                <label for="item51"><br></label>
+
+                              </div>
+
+                            </div>
+                            <br>
+                            <div class="row" style="padding:5px;margin-left: 15px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+                              <div class="col-md-2" style="margin-top:5px;">
+
+                                <label for="slno52">2<br></label>
+
+                              </div>
+                              <div class="col-md-4" style="margin-top:5px; color:white; font-size:1.25em;">
+
+                                <label for="name52">Khiree<br></label>
+
+
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <label for="price52">₹{{ obj[0].khiree }}<br></label>
+
+                              </div>
+                              <div class="col-md-3" style="margin-top:-3px;">
+
+                                <input type="checkbox" id="item52" name="item" value="khiree" />
+
+
+                                <label for="item52"><br></label>
+
+                              </div>
+
+                            </div>
+                            <br>
+                            <div class="row">
+                              <div class="col-md-5">
+                                <label for="nguest">No. of guest expected<br></label>
+                              </div>
+                              <div class="col-md-4">
+
+
+                                <input type="number" id="nguest" name="qty1" class="form-control" placeholder="Enter the no of persons" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the no of persons'" required>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+
+              </div>
+            </div>
+          </div>
+          <div class="row" style="padding: 5px;" text-align="center;">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-primary1">Submit</button>
+              <button type="back" href='#' class="btn btn-primary1" style="background-color: #856404;border-color: #856404;">Choose Date Again</button>
+            </div><br>
+          </div>
+
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+
+
+  <br>
+  <footer class="bg-theme1">
+    <div class="container-fluid">
+      <div class="cpy-right">
+        <div class="row">
+
+
+          <div class="col-lg-6 mt-lg-0 mt-4">
+            <marquee class="text-white" direction="left">© Copyright 2017 - 2019 | KIIT Temple Trust KIIT | All Rights Reserved
+
+            </marquee>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>KTT| Admin Bhoga Bazar</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/bootstrap1.min.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/bootstrap-responsive.min.css' ) }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/fullcalendar.css' ) }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/matrix-style.css' ) }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/matrix-media.css' ) }}" />
+<link href="{{ url_for('static',filename = 'admin_font-awesome/css/font-awesome.css' ) }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/jquery.gritter.css' ) }}" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'></head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1></h1>
+</div>
+<!--close-Header-part-->
+
+
+<!--top-Header-menu-->
+
+<!--close-top-Header-menu-->
+<!--start-top-serch-->
+
+<!--close-top-serch-->
+<!--sidebar-menu-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i></a>
+  <ul>
+    <li class="active"><a href="/adminbhoga"><span>Bhoga Bazar</span></a></li>
+    <li> <a href="/admindonation"> <span>Donation</span></a> </li>
+    <li> <a href="/adminhallbook"> <span>Anand Bazar</span></a> </li>
+
+      <li class=""><a title="" href="/adminlogout"><span class="text">Logout</span></a></li>
+
+
+
+  </ul>
+</div>
+<!--sidebar-menu-->
+<br>
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb">
+      <li>
+      <a href="#" title="You are in Daily Thali" class="tip-bottom"><i class="icon-wrench"></i>Daily Thali</a>
+    </li>
+      <a href="/adminspecial" title="Go to Special Thali" class="tip-bottom"><i class="icon-wrench"></i>Special Thali</a>
+
+      <a href="/adminparty" title="Go to Party Order" class="tip-bottom"><i class="icon-file"></i>Party Order</a>
+    </div>
+  </div>
+<!--End-breadcrumbs-->
+
+<!--Action boxes-->
+  <div class="container-fluid">
+
+    <form action="/admindailythali" method="post">
+      <div class="row-fluid">
+        <div class="widget-box">
+          <div class="widget-title bg_lg" data-toggle="collapse" href="#collapseG2"><span class="icon"><i class="icon-wrench"></i></span>
+            <h5 id="setquantity">Set Quantity & Price (Daily Thali)</h5>
+          </div>
+          <div class="widget-content">
+            <div class="row-fluid">
+
+  		  <div class="span4" style="color:#171616;">
+                  Set Daily Thali Price(in ₹)
+                  <input type="number" min="0" name="price" value="0" id="">
+                </div>
+            <div class="span4">
+              Set Daily Thali Quantity Available
+              <br>
+              <input type="number" min="0" name="qty" value="0" id="">
+            </div>
+            <div class="span4" style="margin-top: 23px;margin-left: 14px;">
+              <button class="btn btn-success btn-mini">Confirm</button>
+            </div>
+
+            </div>
+          </div>
+        </div>
+       </div>
+      </form>
+  <!--End-Chart-box-->
+      <hr/>
+      <form action="">
+      <div class="row-fluid">
+        <div class="widget-box">
+          <div class="widget-title bg_lg"><span class="icon"><i class="icon-wrench"></i></span>
+            <h5 id="clearquantity">Set Daily Thali Cut Off time</h5>
+          </div>
+          <div class="widget-content" >
+            <div class="row-fluid">
+              <div class="span4">
+               Current Cut off time :
+              <br>  <input type="time"  name="" value="" id="" disabled>
+            </div>
+            <div class="span4">
+             Set new Cut off time :
+            <br>  <input type="time"  name="" value="" id="" disabled>
+          </div>
+          <div class="span4" style="margin-top: 23px;margin-left: 14px;">
+             <button href="#" class="btn btn-success btn-mini">Clear Daily Thali</button></div>
+
+
+
+            </div>
+          </div>
+
+
+
+        </div>
+      </div></form>
+      <div class="row-fluid">
+        <div class="span6">
+
+
+
+          <div class="widget-box">
+            <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG3" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
+              <h5 id="detdaily">Bhoga Bazar Details (Daily Thali)</h5>
+            </div>
+            <div class="widget-content nopadding updates collapse in" id="collapseG3">
+              <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+                <div class="update-done"><strong>Item-1: Anna (RICE)</strong><span></span> </div>
+
+              </div>
+              <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+                <div class="update-done"><strong>Item-2: Harada Dali</strong><span></span> </div>
+
+              </div>
+              <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+                <div class="update-done"><strong>Item-3: Beshar</strong><span></span> </div>
+
+              </div>
+              <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+                <div class="update-done"><strong>Item-4: Ambula Rai</strong><span></span> </div>
+
+              </div>
+              <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+                <div class="update-done"><strong>Item-5: Khiraa</strong> <span></span> </div>
+
+              </div>
+              <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+                <div class="update-done"><strong>Item-6: Dahi Bundi</strong><span></span> </div>
+
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="span6">
+
+
+
+        <div class="widget-box">
+          <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG4" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
+            <h5 id="detdaily">Today's Order</h5>
+          </div>
+          <div class="widget-content nopadding updates collapse in" id="collapseG4">
+            <div class="new-update clearfix">
+<div class="span6">
+            Today's Date :
+          </div>
+            <div class="span6">
+               <p id="date"></p>
+            </div></div>
+            <div class="new-update clearfix">
+              <div class="span6">
+            Total Thali Ordered
+          </div>
+            <div class="span3">
+            {% if count_obj %}
+            <input type="number" min="0" name="thali ordered" value="{{ count_obj }}" placeholder="{{ count_obj }}" id="" disabled>
+            {% else %}
+            <input type="number" min="0" name="thali ordered" value="" placeholder="" id="" disabled>
+            {% endif %}
+          </div>
+</div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+          <div class="widget-box">
+            <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG5" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
+              <h5 id="detbook">Thali Booking Details</h5>
+            </div>
+            <div class="widget-content updates collapse out" id="collapseG5">
+              <div class="row-fluid">
+                <br>
+                <form action="/admindaily" method="post">
+                <div class="span6">
+
+                      Select Date: <input type="date" name="details" value="" placeholder="">
+                </div>
+                <div class="span4">
+                    <button class="btn btn-success btn-mini">Show All Orders</button>
+                </div>
+                </form>
+             </div>
+             <div class="row-fluid">
+                <br>
+
+                <div class="span12">
+        {% if show_obj %}
+        <div class="widget-content nopadding updates collapse in" id="collapseG1" style="overflow-x: auto; ">
+          <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>FIRST Name</th>
+              <th>LAST Name</th>
+              <th>Address</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>QTY</th>
+              <th>price</th>
+              <th>type_of_order</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for o in show_obj %}
+               <tr>
+                  <td>{{ o.firstname }}</td>
+                  <td>{{ o.lastname }}</td>
+                  <td>{{ o.address }}</td>
+                  <td>{{ o.email }}</td>
+                  <td>{{ o.phone }}</td>
+                  <td>{{ o.anna }}</td>
+                  <td>{{ o.price }}</td>
+                  <td>{{ o.type_of_order }}</td>
+ </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      {% endif %}
+                </div>
+            </div>
+
+             </div>
+           </div>
+         </div>
+      </div>
+      </div>
+    </div>
+    </div>
+
+<!--end-main-container-part-->
+
+<!--Footer-part-->
+
+<div class="row-fluid">
+  <div id="footer" class="span12">  <marquee class="text-white" direction="left">© Copyright 2017 - 2019 | KIIT Temple Trust KIIT | All Rights Reserved
+
+            </marquee> </div>
+</div>
+
+<!--end-Footer-part-->
+
+<script src="{{ url_for('static',filename = 'admin_js/excanvas.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.flot.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.flot.resize.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.dashboard.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.gritter.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.ui.custom.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.peity.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/fullcalendar.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.interface.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.chat.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.validate.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.form_validation.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.wizard.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.uniform.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/select2.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.popover.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.tables.js') }}"></script>
+<script type="text/javascript">
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
+<script type="text/javascript">
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
+
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();
+          }
+          // else, send page to designated URL
+          else {
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+</script>
+</body>
+</html>

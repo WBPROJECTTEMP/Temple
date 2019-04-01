@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	font-family:'Roboto', sans-serif;
+	background:url('../admin_img/background.jpg') no-repeat center fixed;
+	background-size: cover;
+}
+
+.main-section{
+	margin:0 auto;
+	padding:0;
+	margin-top:30%;
+}
+
+.modal-content{
+	background-color:#000000a3;
+	padding:0 18px;
+	border-radius:10px;
+}
+
+.user-img img{
+	width:120px;
+	height:120px;
+}
+
+.user-img{
+	margin-top:-60px;
+	margin-bottom:30px;
+}
+
+.input-group{
+	margin-bottom:25px;
+}
+
+.input-group input{
+	height:45px;
+	border-radius:5px;
+	border:0;
+	font-size:18px;
+	letter-spacing:2px;
+}
+
+.form-input button{
+	width:40%;
+	margin:5px 0 25px;
+}
+
+.forgot{
+	padding:5px 0 25px;
+}
+
+.forgot a{
+	color:white;
+}
+
+.forgot a:hover{
+	color:blue;
+	text-decoration:none;
+}

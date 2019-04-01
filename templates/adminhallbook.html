@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>KTT| Admin Bhoga Bazar</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/bootstrap1.min.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/bootstrap-responsive.min.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/fullcalendar.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/matrix-style.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/matrix-media.css') }}" />
+<link href="{{ url_for('static',filename = 'admin_font-awesome/css/font-awesome.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/jquery.gritter.css') }}" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1></h1>
+</div>
+<!--close-Header-part-->
+
+
+<!--top-Header-menu-->
+
+<!--close-top-Header-menu-->
+<!--start-top-serch-->
+
+<!--close-top-serch-->
+<!--sidebar-menu-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home">Control Panel</i></a>
+  <ul>
+    <li ><a href="/adminbhoga"><span>Bhoga Bazar</span></a></li>
+    <li> <a href="/admindonation"> <span>Donation</span></a> </li>
+    <li class="active"> <a href="/adminhallbook"> <span>Anand Bazar</span></a> </li>
+
+      <li class=""><a title="" href="/adminlogout"><span class="text">Logout</span></a></li>
+
+
+
+  </ul>
+</div>
+<!--sidebar-menu-->
+<br>
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="#hbd" title="See Hall Booking Detail" class="tip-bottom"><i class="icon-wrench"></i>Hall Booking Detail</a>
+      <a href="#accd" title="See Accomodation Detail" class="tip-bottom"><i class="icon-wrench">Accomodation Detail</i></a>
+      <a href="#smpd" title="See Marriage and Party Details" class="tip-bottom"><i class="icon-hdd"></i>Marriage and Party Details</a>
+      <a href="#smsg" title="See Send Message" class="tip-bottom"><i class="icon-hdd"></i>Send Message</a>
+    </div>
+  </div>
+<!--End-breadcrumbs-->
+
+<!--Action boxes-->
+  <div class="container-fluid">
+
+
+<!--Chart-box-->
+    <div class="row-fluid">
+      <div class="widget-box">
+        <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseG1"><span class="icon"><i class="icon-chevron-down"></i></span>
+          <h5 id="hbd">Hall Booking Detail</h5>
+        </div>
+        <div class="widget-content nopadding updates collapse in" id="collapseG1">
+          <table class="table table-bordered table-striped">
+         <thead>
+         <tr>
+            <td>Date</td>
+            <td>Hall1_Slot1</td>
+            <td>Hall1_Slot2</td>
+            <td>Hall2_Slot1</td>
+            <td>Hall2_Slot2</td>
+            <td>Hall3_Slot1</td>
+            <td>Hall3_Slot2</td>
+            <td>Hall4_Slot1</td>
+            <td>Hall4_Slot2</td>
+            <td>Decoration1</td>
+            <td>Decoration2</td>
+            <td>Decoration3</td>
+          </tr>
+         </thead>
+         <tbody>
+          {% for o in obj_hallbook %}
+          <tr>
+          	<td>{{ o.date }}</td>
+          	<td>{{ o.hall1_slot1 }}</td>
+          	<td>{{ o.hall1_slot2 }}</td>
+          	<td>{{ o.hall2_slot1 }}</td>
+          	<td>{{ o.hall2_slot2 }}</td>
+          	<td>{{ o.hall3_slot1 }}</td>
+          	<td>{{ o.hall3_slot2 }}</td>
+          	<td>{{ o.hall4_slot1 }}</td>
+          	<td>{{ o.hall4_slot2 }}</td>
+          	<td>{{ o.deco1 }}</td>
+          	<td>{{ o.deco2 }}</td>
+          	<td>{{ o.deco3 }}</td>
+          </tr> 
+          {% endfor %}
+         </tbody>
+         </table>
+        </div>
+      </div>
+     </div>
+<!--End-Chart-box-->
+    <hr/>
+
+    <div class="row-fluid">
+      <div class="widget-box">
+        <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseG2"><span class="icon"><i class="icon-chevron-down"></i></span>
+          <h5 id="accd">Accomodation Detail</h5>
+        </div>
+        <div class="widget-content nopadding updates collapse in" id="collapseG2">
+         <table class="table table-bordered table-striped">
+         <thead>
+         <tr>
+            <td>Date</td>
+            <td>ROOM1</td>
+            <td>ROOM2</td>
+            <td>ROOM3</td>
+            <td>ROOM4</td>
+          </tr>
+         </thead>
+         <tbody>
+          {% for o in obj_hallbook %}
+          <tr>
+          	<td>{{ o.date }}</td>
+          	<td>{{ o.room_1 }}</td>
+          	<td>{{ o.room_2 }}</td>
+          	<td>{{ o.room_3 }}</td>
+          	<td>{{ o.room_4 }}</td>
+          </tr> 
+          {% endfor %}
+         </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG3" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
+            <h5 id="smpd">Customer Details</h5>
+          </div>
+          <div class="widget-content nopadding updates collapse in" id="collapseG3">
+          <table class="table table-bordered table-striped">
+         <thead>
+            <tr>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Address</th>
+               <th>Email</th>
+               <th>Mobile</th>
+               <th>No_Of_Guest</th>
+            </tr>
+         </thead>
+         <tbody>
+		    {% for o  in obj_details_hall %}
+         <tr>
+		   <td>{{ o.fname }}</td>
+		   <td>{{ o.lname }}</td>
+		   <td>{{ o.address }}</td>
+		   <td>{{ o.email }}</td>
+		   <td>{{ o.mobile }}</td>
+		   <td>{{ o.nfg }}</td>
+		 </tr>
+		    {% endfor %}
+		 </tbody>
+	</table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="widget-box">
+        <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG4" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
+          <h5 id="smsg">Send Message</h5>
+        </div>
+        <div class="widget-content nopadding updates collapse out" id="collapseG4">
+          <div class="new-update clearfix"><i class="icon-arrow-right"></i>
+             <div class="update-done"><strong>To:</strong><br>
+              <input type="text" id="qa2" name="qa2" placeholder="Email"><br><h4>Or</h4><span><a href="#" class="btn btn-success btn-mini">Select All</a></span><br>
+              <strong>Message</strong><br>
+              <textarea type="text" id="qa1" name="qa1" placeholder="Enter your Message" rows="5"></textarea>
+              <br>
+              <button href="#" class="btn btn-success btn-mini">Send</button>
+             </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+    </div>
+
+<!--end-main-container-part-->
+
+<!--Footer-part-->
+
+<div class="row-fluid">
+  <div id="footer" class="span12">  <marquee class="text-white" direction="left">© Copyright 2017 - 2019 | KIIT Temple Trust KIIT | All Rights Reserved
+
+            </marquee> </div>
+</div>
+
+<!--end-Footer-part-->
+
+<script src="{{ url_for('static',filename = 'admin_js/excanvas.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.ui.custom.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.flot.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.dashboard.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.gritter.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.flot.resize.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.peity.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/fullcalendar.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.interface.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.chat.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.validate.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.form_validation.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.wizard.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.uniform.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/select2.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.popover.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.tables.js') }}"></script>
+<script type="text/javascript">
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
+<script type="text/javascript">
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
+
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();
+          }
+          // else, send page to designated URL
+          else {
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+</script>
+</body>
+</html>

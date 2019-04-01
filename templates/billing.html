@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>KTT | Daily Thali | Bhoga Bazar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!-- Custom Theme files -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="{{ url_for('static',filename = 'css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" media="all">
+  <link href="{{ url_for('static',filename = 'css/style.css') }}" type="text/css" rel="stylesheet" media="all">
+  <link href="{{ url_for('static',filename = 'css/style1.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- navigation -->
+  <link href="{{ url_for('static',filename = 'css/nav.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- banner slider -->
+  <link href="{{ url_for('static',filename = 'css/css_slider.css') }}" type="text/css" rel="stylesheet" media="all">
+  <!-- font-awesome icons -->
+  <link href="{{ url_for('static',filename = 'css/font-awesome.min.css') }}" rel="stylesheet">
+  <!-- //Custom Theme files -->
+  <!-- online-fonts -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Charm|Kaushan+Script" rel="stylesheet">
+  <!-- Common js -->
+  <script src="{{ url_for('static',filename = 'js/jquery-2.2.3.min.js') }}"></script>
+
+
+
+</head>
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+  <!-- header -->
+  <div class="main-nav">
+<div class="content white agile-info">
+
+  <nav class="mnu navbar-light">
+
+        <img src="static/images/KIIT-Temple_logo.jpg" >
+
+      <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+      <input type="checkbox" id="drop">
+                <ul class="menu">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="dropdown nav-item"><a class="nav-link" href="#">Overview</a>
+          <div class="dropdown-content  show">
+            <a href="/about" class="nav-link">About KTT</a>
+            <a class="nav-link" href="/founder">Founder</a>
+            <a href="https://kiit.ac.in/" class="nav-link">KIIT</a>
+            <a href="https://www.kiss.ac.in/" class="nav-link">KISS</a>
+          </div>
+        </li>
+        <li class="dropdown nav-item"><a class="nav-link" href="#">Puja</a>
+          <div class="dropdown-content  show">
+            <a href="/puja" class="nav-link">Architecture</a>
+                  <a class="nav-link" href="/festivals">Festivals</a>
+            <a href="/rituals" class="nav-link">Rituals</a>
+            <a href="/deities" class="nav-link">Deities</a>
+          </div>
+        </li>
+        <li class="dropdown nav-item"><a class="nav-link" href="#">Services</a>
+          <div class="dropdown-content  show">
+            <a href="/hall" class="nav-link">Ananda Bazar</a>
+            <a href="/" class="nav-link">Bhoga Bazar</a>
+            {% if login_session %}
+          <a href="/amtdonate" class="nav-link">Donation</a>
+          {% else %}
+          <a href="/donation" class="nav-link">Donation</a>
+          {% endif %}
+          </div>
+        </li>
+        <li class="dropdown nav-item"><a class="nav-link" href="#">Humanatarian Services</a>
+          <div class="dropdown-content  show">
+            <a href="/education" class="nav-link">Education</a>
+            <a class="nav-link" href="/health">Health & Wellness</a>
+            <a href="/environment" class="nav-link">Environment</a>
+            <a href="/familycare" class="nav-link">Family & Community Welfare</a>
+            <a href="/ruraldev" class="nav-link">Rural Development</a>
+          </div>
+        </li>
+        {% if login_session %}
+      <li class="nav-item"><a class="nav-link" href="/amtdonate">Donation</a></li>
+      {% else %}
+      <li class="nav-item"><a class="nav-link" href="/donation">Donation</a></li>
+      {% endif %}
+                  <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                  <li class="dropdown nav-item"><a  class="nav-link" href="/contact">Contact Us</a>
+                    <div class="dropdown-content show">
+                      <a href="/contact" class="nav-link">Feedback</a>
+                      <a class="nav-link" href="/contact">Complaint</a>
+                    </div>
+                  </li>
+      {% if login_session %}
+      <li class="nav-item"><a class="nav-link" href="/logout">LogOUT</a></li>
+      {% else %}
+      <li class="nav-item"><a class="nav-link" href="/donation">LogIN</a></li>
+      {% endif %}
+                </ul>
+    </nav>
+
+</div>
+</div>
+
+
+
+  <div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+
+      <h2 class="title-inner">
+        <br>
+        Billing Memo
+
+      </h2>
+
+
+    </div>
+    <!-- //banner-text -->
+  </div><br><br>
+
+
+
+
+
+
+
+
+
+
+  <!-- main -->
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+        <form action="/billing" method="post">
+          <div id="about" style="margin-top:30px;" class="mainbox aboutbox text-center">
+            <div class="panel " style="padding: 1em;"><br>
+              <h4 class="rad-txt" style=" padding: 15px;
+          text-shadow: 0px 3px 2px black;
+          color: white;
+          font-weight: bolder;
+
+          font-size: 38px;">
+                Billing Details
+
+              </h4>
+              <div class="container" style="background-color: white; color: black; border-radius:20px;">
+
+                <div class="row" style="padding:5px;margin-left: 15px;margin-top: 13px;">
+                <div class=" col-md-6">
+
+                  <div>
+                    <h1>
+
+                      <img src="images/KIIT-Temple_logo.jpg" class="logo img-fluid" alt="" width="90%">
+
+                    </h1>
+                    <h1 style="font-weight: bolder; color: #0d9bc9; ">INVOICE</h3>
+                  </div>
+
+                </div>
+                <div class=" col-md-6">
+
+                  <div style="margin-top: 35px;">
+                    <h6 style="float:left;"><b>Email:</b><small> ktt@gmail.com</small></h6><br>
+                    <h6 style="float:left;"><b>Address:</b><small> KISS university, Patia, Bhubaneswar</small></h6><br>
+                    <h6 style="float:left;"><b>Pin code:</b><small> 7530001</small></h6><br>
+                    <h6 style="float:left;"><b>Invoice Number:</b> 1019284376565</h6>
+                  </div>
+
+                </div>
+
+              </div><hr style="border: 2px solid black;background-color:black;">
+                <div class="row" style="padding:5px;">
+                  <div class="col-12" style="margin-bottom: 30px;">
+                    <h1 style="font-weight: bolder; color: #0d9bc9; ">CUSTOMER'S DETAILS</h1>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="d-flex justify-content-center">
+                      <table class="table table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col"><h3>Name:</h3></th>
+                            <th scope="col"><h5>{{ liii[0] }} {{ liii[1] }}</h5></th>
+                          </tr>
+                          <tr>
+                            <th scope="col"><h3>Email:</h3></th>
+                            <th scope="col"><h5>{{ liii[3] }}</h5></th>
+                          </tr>
+                          <tr>
+                            <th scope="col"><h3>Phone no:</h3></th>
+                            <th scope="col"><h5>{{ liii[4] }}</h5></th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="d-flex justify-content-center">
+                      <table class="table table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col"><h3>Address:</h3></th>
+                            <th scope="col"><h5>{{ liii[2] }}</h5></th>
+                          </tr>
+                          <tr>
+                            <th scope="col"><h3>Date:</h3></th>
+                            <th scope="col"><h5>{{ date }}</h5></th>
+                          </tr>
+                          <tr>
+                            <th scope="col"><h3>Guest expected:</h3></th>
+                            <th scope="col"><h5>{{ liii[5] }}</h5></th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+
+                </div><hr style="border: 2px solid black;background-color:black;">
+                <div class="row" style="padding:5px;margin-left: 15px;">
+                  <div class="col-md-12">
+
+                    <div class="col-12" style="margin-bottom: 30px;">
+                      <h1 style="font-weight: bolder; color: #0d9bc9; ">HALL</h1>
+                    </div>
+                    <div class="col-12" style="margin-bottom: 30px;">
+                    <div class="d-flex justify-content-center">
+                      <table class="table table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col"><h2 style="font-weight: bolder">HALL'S AVAILABLE</h2></th>
+                            <th scope="col"><h2 style="font-weight: bolder">HALL BOOKED</h2></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">Hall 1</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ hall[0] }}</h4></td>
+                          </tr>
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">Hall 2</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ hall[1] }}</h4></td>
+                          </tr>
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">Hall 3</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ hall[2] }}</h4></td>
+                          </tr>
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">Hall 4</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ hall[3] }}</h4></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    </div>
+
+                  </div>
+
+                </div><hr style="border: 2px solid black;background-color:black;">
+
+                <div class="row" style="padding:5px;margin-left: 15px;">
+                  <div class="col-md-12">
+
+                    <div class="col-12" style="margin-bottom: 30px;">
+                      <h1 style="font-weight: bolder; color: #0d9bc9; ">ROOMS</h1>
+                    </div>
+                    <div class="col-12" style="margin-bottom: 30px;">
+                    <div class="d-flex justify-content-center">
+                      <table class="table table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col"><h2 style="font-weight: bolder">ROOM'S AVAILABLE</h2></th>
+                            <th scope="col"><h2 style="font-weight: bolder">ROOM BOOKED</h2></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">Room 1</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ room[0] }}</h4></td>
+                          </tr>
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">Room 2</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ room[1] }}</h4></td>
+                          </tr>
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">Room 3</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ room[2] }}</h4></td>
+                          </tr>
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">Room 4</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ room[3] }}</h4></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    </div>
+
+                  </div>
+
+                </div><hr style="border: 2px solid black;background-color:black;">
+
+                <div class="row" style="padding:5px;margin-left: 15px;">
+                  <div class="col-md-12">
+
+
+                    <div class="col-12" style="margin-bottom: 30px;">
+                      <h1 style="font-weight: bolder; color: #0d9bc9; ">DECORATIONS</h1>
+                    </div>
+
+                    <div class="col-12" style="margin-bottom: 30px;">
+                    <div class="d-flex justify-content-center">
+                      <table class="table table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col"><h2 style="font-weight: bolder">DECORATION 'S AVAILABLE</h2></th>
+                            <th scope="col"><h2 style="font-weight: bolder">DECORATION BOOKED</h2></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">Decoration 1</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ deco[0] }}</h4></td>
+                          </tr>
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">Decoration 2</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ deco[1] }}</h4></td>
+                          </tr>
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">Decoration 3</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ deco[2] }}</h4></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    </div>
+
+                  </div>
+
+                </div><hr style="border: 2px solid black;background-color:black;">
+
+                <div class="row" style="padding:5px;margin-left: 15px;">
+                  <div class="col-md-12">
+
+
+                    <div class="col-12" style="margin-bottom: 30px;">
+                      <h1 style="font-weight: bolder; color: #0d9bc9; ">CATERING BOOKED</h1>
+                    </div>
+
+                    <div class="col-12" style="margin-bottom: 30px;">
+                    <div class="d-flex justify-content-center">
+                      <table class="table table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col"><h2 style="font-weight: bolder">ITEMS</h2></th>
+                            <th scope="col"><h2 style="font-weight: bolder">PRICE</h2></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         {% for x,y in items %}
+                          <tr>
+                            <td><h4 style="font-weight: bolder;">{{ x }}</h4></td>
+                            <td><h4 style="font-weight: bolder;">{{ y }}</h4></td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                    </div>
+
+                  </div>
+
+                </div><hr style="border: 2px solid black;background-color:black;">
+
+
+                <div class="row" style="padding:5px;margin-left: 15px;">
+                  <div class="col-md-12">
+
+
+                    <div class="col-12" style="margin-bottom: 30px;">
+                    <div class="d-flex justify-content-center">
+                      <table class="table table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col"><h2 style="font-weight: bolder">TOTAL PRICE</h2></th>
+                            <th scope="col"><h2 style="font-weight: bolder">Rs.{{ hall_price }}/-</h2></th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+
+              </div>
+              <div class="row" style="padding: 5px; margin-top: 20px;" text-align="center">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-primary1">Buy</button>
+                  <button type="skip"  class="btn btn-primary1" style="background-color: #856404;border-color: #856404;" formnovalidate>Reset</button>
+
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+          </form>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+  <br>
+  <footer class="bg-theme1">
+    <div class="container-fluid">
+      <div class="cpy-right">
+        <div class="row">
+
+
+          <div class="col-lg-6 mt-lg-0 mt-4">
+            <marquee class="text-white" direction="left">© Copyright 2017 - 2019 | KIIT Temple Trust KIIT | All Rights Reserved
+
+            </marquee>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+</html>

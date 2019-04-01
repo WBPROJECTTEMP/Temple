@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>KTT| Admin Bhoga Bazar</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/bootstrap1.min.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/bootstrap-responsive.min.css' ) }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/fullcalendar.css' ) }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/matrix-style.css' ) }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/matrix-media.css' ) }}" />
+<link href="{{ url_for('static',filename = 'admin_font-awesome/css/font-awesome.css' ) }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/jquery.gritter.css' ) }}" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1></h1>
+</div>
+<!--close-Header-part-->
+
+
+<!--top-Header-menu-->
+
+<!--close-top-Header-menu-->
+<!--start-top-serch-->
+
+<!--close-top-serch-->
+<!--sidebar-menu-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i></a>
+  <ul>
+    <li class="active"><a href="/adminbhoga"><span>Bhoga Bazar</span></a></li>
+    <li> <a href="/admindonation"> <span>Donation</span></a> </li>
+    <li> <a href="/adminhallbook"> <span>Anand Bazar</span></a> </li>
+
+      <li class=""><a title="" href="/adminlogout"><span class="text">Logout</span></a></li>
+
+
+
+  </ul>
+</div>
+<!--sidebar-menu-->
+<br>
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb">
+      <li>
+        <a href="#" title="You are in Special Thali" class="tip-bottom"><i class="icon-wrench"></i>Special Thali</a>
+      </li>
+      <a href="/admindaily" title="Go to Daily Thali" class="tip-bottom"><i class="icon-wrench"></i>Daily Thali</a>
+
+      <a href="/adminparty" title="Go to Party Order" class="tip-bottom"><i class="icon-file"></i>Party Order</a>
+    </div>
+  </div>
+<!--End-breadcrumbs-->
+
+<!--Action boxes-->
+  <div class="container-fluid">
+
+    <form action="/adminspecialthali" method="post">
+    <div class="row-fluid">
+      <div class="widget-box">
+        <div class="widget-title bg_lg" data-toggle="collapse" href="#collapseG2" ><span class="icon"><i class="icon-chevron-down"></i></span>
+          <h5  id="setspclthali">Set Special Thali</h5>
+        </div>
+        <div class="widget-content" >
+          <div class="row-fluid">
+          <div class="widget-content nopadding updates collapse out" id="collapseG2">
+            <h4 class="rad-txt" style=" padding: 18px;
+
+          color: blue;
+          font-weight: bolder;
+
+          font-size: 18px;">
+              ANNA MAHAPRASAD
+
+            </h4>
+
+            <br>
+            <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+              <div class="span2" style="margin-top:25px; color:#171616;">
+
+                <input type="checkbox" id="item11" name="item" value="anna" />
+
+
+                <label for="item11"></label>
+
+              </div>
+              <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+                <label for="item11">Anna(RICE)</label>
+
+              </div>
+
+               <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price1" placeholder="{{ obj[0].anna }}" value="{{ obj[0].anna }}" id="" >
+              </div>
+
+              <div class="span2" style="color:#171616;">
+                Set Special Thali Quantity Available
+                <input type="number" min="0" name="anna" value="0" id="">
+              </div>
+
+            </div>
+            <br>
+            <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+              <div class="span2" style="margin-top:25px; color:#171616;">
+
+                <input type="checkbox" id="item12" name="item" value="kanika" />
+
+
+                <label for="item12"></label>
+
+              </div>
+              <div class="span3" style="margin-top:30px;color:#171616; font-size:1.25em;">
+
+                <label for="item12">Kanika(Sweet Rice)</label>
+
+
+
+              </div>
+        <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price2" placeholder="{{ obj[0].kanika }}" value="{{ obj[0].kanika }}" id="" >
+              </div>
+
+              <div class="span2" style="color:#171616;">
+                Set Special Thali Quantity Available
+                <input type="number" min="0" name="kanika" value="0" id="">
+              </div>
+
+
+            </div>
+            <br>
+
+            <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+              <div class="span2" style="margin-top:25px; color:#171616;">
+
+                <input type="checkbox" id="item13" name="item" value="jerraanna" />
+
+
+                <label for="item13"></label>
+
+              </div>
+              <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+                <label for="item13">Jeera Anna</label>
+
+              </div>
+              <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price3" placeholder="{{ obj[0].jerraanna }}" value="{{ obj[0].jerraanna }}" id="" >
+              </div>
+
+              <div class="span2" style="color:#171616;">
+                Set Special Thali Quantity Available
+                <input type="number" min="0" name="jerraanna" value="0" id="">
+              </div>
+
+            </div><br>
+            <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+              <div class="span2" style="margin-top:25px; color:#171616;">
+
+                <input type="checkbox" id="item14" name="item" value="oriyaanna" />
+
+
+                <label for="item14"></label>
+
+              </div>
+              <div class="span3" style="margin-top:30px;color:#171616; font-size:1.25em;">
+
+                <label for="item14">Oriya</label>
+
+
+
+              </div>
+              <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" placeholder="{{ obj[0].oriyaanna }}" name="price4" value="{{ obj[0].oriyaanna }}" id="" >
+              </div>
+              <div class="span2" style="color:#171616;">
+                Set Special Thali Quantity Available
+                <input type="number" min="0" name="oriyaanna" value="0" id="">
+              </div>
+
+
+            </div><br>
+            <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+              <div class="span2" style="margin-top:25px; color:#171616;">
+
+                <input type="checkbox" id="item15" name="item" value="kamalaanna" />
+
+
+                <label for="item15"></label>
+
+              </div>
+              <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+                <label for="item15">Kamala Anna(lemon rice)</label>
+
+              </div>
+              <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price5" placeholder="{{ obj[0].kamalaanna }}" value="{{ obj[0].kamalaanna }}" id="" >
+              </div>
+
+              <div class="span2" style="color:#171616;">
+                Set Special Thali Quantity Available
+                <input type="number" min="0" name="kamalaanna" value="0" id="">
+              </div>
+
+            </div><br>
+            <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+              <div class="span2" style="margin-top:25px; color:#171616;">
+
+                <input type="checkbox" id="item16" name="item" value="gheeanna" />
+
+
+                <label for="item16"></label>
+
+              </div>
+              <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+                <label for="item16">Ghea Anna (ghee anna)</label>
+
+              </div>
+              <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price6" placeholder="{{ obj[0].gheeanna }}" value="{{ obj[0].gheeanna }}" id="" >
+              </div>
+
+              <div class="span2" style="color:#171616;">
+                Set Special Thali Quantity Available
+                <input type="number" min="0" name="gheeanna" value="0" id="">
+              </div>
+
+            </div><br>
+
+
+            <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+              <div class="span2" style="margin-top:25px; color:#171616;">
+
+                <input type="checkbox" id="item17" name="item" value="khichudi" />
+
+
+                <label for="item17"></label>
+
+              </div>
+              <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+                <label for="item17">Khuchudi</label>
+
+              </div>
+              <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price7" placeholder="{{ obj[0].khichudi }}" value="{{ obj[0].khichudi }}" id="" >
+              </div>
+
+              <div class="span2" style="color:#171616;">
+                Set Special Thali Quantity Available
+                <input type="number" min="0" name="khichudi" value="0" id="">
+              </div>
+
+            </div>
+            <br><h4 class="rad-txt" style=" padding: 18px;
+
+            color:blue ;
+            font-weight: bolder;
+
+            font-size: 18px;">
+              DALI
+
+            </h4>
+
+            <br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item21" name="item" value="haradadali" />
+
+
+    <label for="item21"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item21">Harad Dali</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price8" placeholder="{{ obj[0].haradadali }}" value="{{ obj[0].haradadali }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="haradadali" value="0" id="">
+    </div>
+
+    </div>
+    <br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item22" name="item" value="mugadali" />
+
+
+    <label for="item22"></label>
+
+    </div>
+    <div class="span3" style="margin-top:30px;color:#171616; font-size:1.25em;">
+
+    <label for="item22">Muga Dali</label>
+
+
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price9" placeholder="{{ obj[0].mugadali }}" value="{{ obj[0].mugadali }}" id="" >
+              </div>
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="mugadali" value="0" id="">
+    </div>
+
+
+    </div>
+    <br>
+
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item23" name="item" value="haradadalma" />
+
+
+    <label for="item23"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item23">Harad Dalma</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price10" placeholder="{{ obj[0].haradadalma }}" value="{{ obj[0].haradadalma }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="haradadalma" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item24" name="item" value="mugadalma" />
+
+
+    <label for="item24"></label>
+
+    </div>
+    <div class="span3" style="margin-top:30px;color:#171616; font-size:1.25em;">
+
+    <label for="item24">Muga Dalma</label>
+
+
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price11" placeholder="{{ obj[0].mugadalma }}" value="{{ obj[0].mugadalma }}" id="" >
+              </div>
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="mugadalma" value="0" id="">
+    </div>
+
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item25" name="item" value="puridali" />
+
+
+    <label for="item25"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item25">Puri Dalma</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price12" placeholder="{{ obj[0].puridali }}" value="{{ obj[0].puridali }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="puridali" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item26" name="item" value="purimithadali" />
+
+
+    <label for="item26"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item26">Puri Mitha Dali</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price13" placeholder="{{ obj[0].purimithadali }}" value="{{ obj[0].purimithadali }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="purimithadali" value="0" id="">
+    </div>
+
+    </div><br>
+
+
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item27" name="item" value="butadali" />
+
+
+    <label for="item27"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item27">Buta Dali</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price14" placeholder="{{ obj[0].butadali }}" value="{{ obj[0].butadali }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="butadali" value="0" id="">
+    </div>
+
+    </div><br>
+    <h4 class="rad-txt" style=" padding: 18px;
+
+    color: blue;
+    font-weight: bolder;
+
+    font-size: 18px;">
+    TARAKARI (CURRY)
+
+    </h4>
+
+    <br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item31" name="item" value="beshar" />
+
+
+    <label for="item31"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item31">Beshar</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price15" placeholder="{{ obj[0].beshar }}" value="{{ obj[0].beshar }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="beshar" value="0" id="">
+    </div>
+
+    </div>
+    <br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item32" name="item" value="sagamuga" />
+
+
+    <label for="item32"></label>
+
+    </div>
+    <div class="span3" style="margin-top:30px;color:#171616; font-size:1.25em;">
+
+    <label for="item32">Saga-Muga</label>
+
+
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price16" placeholder="{{ obj[0].sagamuga }}" value="{{ obj[0].sagamuga }}" id="" >
+              </div>
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="sagamuga" value="0" id="">
+    </div>
+
+
+    </div>
+    <br>
+
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item33" name="item" value="bhajachennatarkari" />
+
+
+    <label for="item33"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item33">Bhaja Chena Tarakari</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price17" placeholder="{{ obj[0].bhajachennatarkari }}" value="{{ obj[0].bhajachennatarkari }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="bhajachennatarkari" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item34" name="item" value="panneertarkari" />
+
+
+    <label for="item34"></label>
+
+    </div>
+    <div class="span3" style="margin-top:30px;color:#171616; font-size:1.25em;">
+
+    <label for="item34">Paneer Tarakari</label>
+
+
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price18" placeholder="{{ obj[0].panneertarkari }}" value="{{ obj[0].panneertarkari }}" id="" >
+              </div>
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="panneertarkari" value="0" id="">
+    </div>
+
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item35" name="item" value="pannerbuta" />
+
+
+    <label for="item35"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item35">Paneer Butta</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price19" placeholder="{{ obj[0].pannerbuta }}" value="{{ obj[0].pannerbuta }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="pannerbuta" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item36" name="item" value="mahura" />
+
+
+    <label for="item36"></label>
+
+    </div>
+    <div class="span3" style="margin-top:30px; color:#171616; font-size:1.25em;">
+
+    <label for="item36">Mahura</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price20" placeholder="{{ obj[0].mahura }}" value="{{ obj[0].mahura }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="mahura" value="0" id="">
+    </div>
+
+    </div><br>
+
+
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item37" name="item" value="potalabesanatarkari" />
+
+
+    <label for="item37"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item37">Potala-Besana tarakari</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price21" placeholder="{{ obj[0].potalabesanatarkari }}" value="{{ obj[0].potalabesanatarkari }}" id="" >
+              </div>
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="potalabesanatarkari" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item38" name="item" value="potalarasha" />
+
+
+    <label for="item38"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item38">Potala-Rasha</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price22" placeholder="{{ obj[0].potalarasha }}" value="{{ obj[0].potalarasha }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="potalarasha" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item39" name="item" value="janhitarkari" />
+
+
+    <label for="item39"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item39">Janhi tarakari</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price23" placeholder="{{ obj[0].janhitarkari }}" value="{{ obj[0].janhitarkari }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="janhitarkari" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item310" name="item" value="butatarkari" />
+
+
+    <label for="item310"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item310">Buta tarakari</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price24" placeholder="{{ obj[0].butatarkari }}" value="{{ obj[0].butatarkari }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="butatarkari" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item311" name="item" value="chips" />
+
+
+    <label for="item311"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item311">Chips</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price25" placeholder="{{ obj[0].chips }}" value="{{ obj[0].chips }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="chips" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item312" name="item" value="kadalibhaja" />
+
+
+    <label for="item312"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item312">Kadali Bhaja</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price26" placeholder="{{ obj[0].kadalibhaja }}" value="{{ obj[0].kadalibhaja }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="kadalibhaja" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item313" name="item" value="potalakurma" />
+
+
+    <label for="item313"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item313">Potala Kurma</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price27" placeholder="{{ obj[0].potalakurma }}" value="{{ obj[0].potalakurma }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="potalakurma" value="0" id="">
+    </div>
+
+    </div><br>
+    <h4 class="rad-txt" style=" padding: 18px;
+
+    color: blue;
+    font-weight: bolder;
+
+    font-size: 18px;">
+    KHATTA
+
+    </h4>
+
+    <br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item41" name="item" value="ambularai" />
+
+
+    <label for="item41"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item41">Ambula Rai</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price28" placeholder="{{ obj[0].ambularai }}" value="{{ obj[0].ambularai }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="ambularai" value="0" id="">
+    </div>
+
+    </div>
+    <br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item42" name="item" value="khajurikatta" />
+
+
+    <label for="item42"></label>
+
+    </div>
+    <div class="span3" style="margin-top:30px;color:#171616; font-size:1.25em;">
+
+    <label for="item42">Khajuri Khatta</label>
+
+
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price29" placeholder="{{ obj[0].khajurikatta }}" value="{{ obj[0].khajurikatta }}" id="" >
+              </div>
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="khajurikatta" value="0" id="">
+    </div>
+
+
+    </div>
+    <br>
+
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item43" name="item" value="dahibaigana" />
+
+
+    <label for="item43"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item43">Dahi Baigana</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price30" placeholder="{{ obj[0].dahibaigana }}" value="{{ obj[0].dahibaigana }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="dahibaigana" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item44" name="item" value="sapurikhatta" />
+
+
+    <label for="item44"></label>
+
+    </div>
+    <div class="span3" style="margin-top:30px;color:#171616; font-size:1.25em;">
+
+    <label for="item44">Sapuri Khatta</label>
+
+
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price31" placeholder="{{ obj[0].sapurikhatta }}" value="{{ obj[0].sapurikhatta }}" id="" >
+              </div>
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="sapurikhatta" value="0" id="">
+    </div>
+
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item45" name="item" value="fruitsalad" />
+
+
+    <label for="item45"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item45">Fruits Salad</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price32" placeholder="{{ obj[0].fruitsalad }}" value="{{ obj[0].fruitsalad }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="fruitsalad" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item46" name="item" value="ambakhatta" />
+
+
+    <label for="item46"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item46">Amba Khatta</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price33" placeholder="{{ obj[0].ambakhatta }}" value="{{ obj[0].ambakhatta }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="ambakhatta" value="0" id="">
+    </div>
+
+    </div><br>
+
+
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item47" name="item" value="ouukhatta" />
+
+
+    <label for="item47"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item47">Ouu Khatta</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price34" placeholder="{{ obj[0].ouukhatta }}" value="{{ obj[0].ouukhatta }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="ouukhatta" value="0" id="">
+    </div>
+
+    </div><br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item48" name="item" value="dahibundi" />
+
+
+    <label for="item48"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item48">Dahi Bundi</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price35" placeholder="{{ obj[0].dahibundi }}" value="{{ obj[0].dahibundi }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="dahibundi" value="0" id="">
+    </div>
+
+    </div><br>
+    <h4 class="rad-txt" style=" padding: 18px;
+
+    color:blue ;
+    font-weight: bolder;
+
+    font-size: 18px;">
+    MITHA
+
+    </h4>
+
+    <br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item51" name="item" value="khira" />
+
+
+    <label for="item51"></label>
+
+    </div>
+    <div class="span3" style="margin-top:25px; color:#171616; font-size:1.25em;">
+
+    <label for="item51">Khiraa</label>
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price36" placeholder="{{ obj[0].khira }}" value="{{ obj[0].khira }}" id="" >
+              </div>
+
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="khira" value="0" id="">
+    </div>
+
+    </div>
+    <br>
+    <div class="row" style="padding:24px;margin-left: 5px;font-family: 'Kaushan Script', cursive;background-color:#787934bd;">
+    <div class="span2" style="margin-top:25px; color:#171616;">
+
+    <input type="checkbox" id="item52" name="item" value="khiree" />
+
+
+    <label for="item52"></label>
+
+    </div>
+    <div class="span3" style="margin-top:30px;color:#171616; font-size:1.25em;">
+
+    <label for="item52">Khiree</label>
+
+
+
+    </div>
+    <div class="span3" style="margin-top:20px; color:#171616;">
+                Set Special Thali Price(in ₹)
+                <input type="number" min="0" name="price37" placeholder="{{ obj[0].khiree }}" value="{{ obj[0].khiree }}" id="" >
+              </div>
+    <div class="span2" style="color:#171616;">
+    Set Special Thali Quantity Available
+    <input type="number" min="0" name="khiree" value="0" id="">
+    </div>
+
+
+    </div><br>
+    <h4 class="rad-txt" style=" padding: 18px;">
+
+    <div class="span6" style="margin-top: 23px;">
+    <button  class="btn btn-success btn-mini">Confirm</button>
+    </div>
+
+    </h4>
+
+    </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </form>
+<div class="row-fluid">
+    <div class="span6">
+      <div class="widget-box">
+        <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG4" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
+          <h5 id="detspcl">Bhoga Bazar Details (Special Thali)</h5>
+        </div>
+        <div class="widget-content nopadding updates collapse in" id="collapseG4">
+          <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+            {% if sp_obj[0] %}
+            <div class="update-done"><strong>Item-1: {{ sp_obj[0].item }}</strong><span>₹{{ sp_obj[0].price  }}</span><br>
+            <input type="number" id="qa1" name="qa1" min="0" placeholder="{{ sp_obj[0].qty }}" >
+           </div>
+           {% endif %}
+          </div>
+          <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+           {% if sp_obj[1] %}
+             <div class="update-done"><strong>Item-2: {{ sp_obj[1].item  }}</strong><span>₹{{ sp_obj[1].price }}</span><br>
+              <input type="number" id="qa2" name="qa2" min="0" placeholder="{{ sp_obj[1].qty }}" >
+             </div>
+           {% endif %}
+          </div>
+          <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+          {% if sp_obj[2] %}
+            <div class="update-done"><strong>Item-3: {{ sp_obj[2].item }}</strong><span>₹{{ sp_obj[2].price }}</span><br>
+            <input type="number" id="qa3" name="qa3" min="0" placeholder="{{ sp_obj[2].qty }}" >
+           </div>
+          {% endif %}
+          </div>
+          <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+          {% if sp_obj[3] %}
+            <div class="update-done"><strong>Item-4: {{ sp_obj[3].item }}</strong><span>₹{{ sp_obj[3].price }}</span><br>
+            <input type="number" id="qa4" name="qa4" min="0" placeholder="{{ sp_obj[3].qty }}" >
+           </div>
+          {% endif %}
+          </div>
+          <div class="new-update clearfix"><i class="icon-ok-sign"></i>
+          {% if sp_obj[4] %}
+             <div class="update-done"><strong>Item-5: {{ sp_obj[4].item }}</strong><span>₹{{ sp_obj[4].price }}</span><br>
+              <input type="number" id="qa5" name="qa5" min="0" placeholder="{{ sp_obj[4].qty }}" >
+             </div>
+          {% endif %}
+          </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="span6">
+
+
+
+    <div class="widget-box">
+      <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG4" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
+        <h5 id="detdaily">Today's Order</h5>
+      </div>
+      <div class="widget-content nopadding updates collapse in" id="collapseG4">
+        <div class="new-update clearfix">
+<div class="span6">
+        Today's Date :
+      </div>
+        <div class="span6">
+           <p id="date"></p>
+        </div></div>
+        <div class="new-update clearfix">
+          <div class="span6">
+        Total Thali Ordered
+      </div>
+</div>
+<div class="new-update clearfix">
+  <div class="span6">
+Item 1
+</div>
+<div class="span3">
+<input type="number" min="0" name="thali ordered" value="0" id="" disabled>
+</div>
+</div>
+<div class="new-update clearfix">
+  <div class="span6">
+Item 2
+</div>
+<div class="span3">
+<input type="number" min="0" name="thali ordered" value="0" id="" disabled>
+</div>
+</div>
+<div class="new-update clearfix">
+  <div class="span6">
+Item 3
+</div>
+<div class="span3">
+<input type="number" min="0" name="thali ordered" value="0" id="" disabled>
+</div>
+</div>
+<div class="new-update clearfix">
+  <div class="span6">
+Item 4
+</div>
+<div class="span3">
+<input type="number" min="0" name="thali ordered" value="0" id="" disabled>
+</div>
+</div>
+<div class="new-update clearfix">
+  <div class="span6">
+Item 5
+</div>
+<div class="span3">
+<input type="number" min="0" name="thali ordered" value="0" id="" disabled>
+</div>
+</div>
+    </div>
+
+  </div>
+  </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+          <div class="widget-box">
+            <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG5" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
+              <h5 id="detbook">Thali Booking Details</h5>
+            </div>
+            <div class="widget-content updates collapse out" id="collapseG5">
+              <div class="row-fluid">
+                <br>
+                <form action="/showbhogadetails" method="post">
+                <div class="span6">
+
+                      Select Date: <input type="date" name="details">
+                </div>
+                <div class="span4">
+                    <button class="btn btn-success btn-mini">Submit</button>
+                </div>
+                </form>
+             </div>
+             <div class="row-fluid">
+                <br>
+
+                <div class="span12">
+        {% if show_obj %}
+        <div class="widget-content nopadding updates collapse in" id="collapseG1" style="overflow-x: auto; ">
+          <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+               <th>FIRST Name</th>
+              <th>LAST Name</th>
+              <th>Address</th>
+              <th>Email</th>
+              <th>Phone</th>
+               <th>anna</th>
+              <th>kanika</th>
+                <th>jerraanna</th>
+                <th>oriyaanna</th>
+                <th>kamalaanna</th>
+                <th>gheeanna</th>
+                <th>khichudi</th>
+                <th>haradadali</th>
+                <th>mugadali</th>
+                <th>haradadalma</th>
+                <th>mugadalma</th>
+                <th>puridali</th>
+                <th>purimithadali</th>
+                <th>butadali</th>
+                <th>beshar</th>
+                <th>sagamuga</th>
+                <th>bhajachennatarkari</th>
+                <th>panneertarkari</th>
+                <th>pannerbuta</th>
+                <th>mahura</th>
+                <th>potalabesanatarkari</th>
+                <th>potalarasha</th>
+                <th>janhitarkari</th>
+                <th>butatarkari</th>
+                <th>chips</th>
+                <th>kadalibhaja</th>
+                <th>potalakurma</th>
+                <th>ambularai</th>
+                <th>khajurikhatta</th>
+                <th>dahibaigana</th>
+                <th>sapurikhatta</th>
+                <th>fruitsalad</th>
+                <th>ambakhatta</th>
+                <th>ouukhatta</th>
+                <th>dahibundi</th>
+                <th>khira</th>
+                <th>khiree</th>
+                <th>price</th>
+                <th>type_of_order</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for o in show_obj %}
+               <tr>
+                  <td>{{ o.firstname }}</td>
+                  <td>{{ o.lastname }}</td>
+                  <td>{{ o.address }}</td>
+                  <td>{{ o.email }}</td>
+                  <td>{{ o.phone }}</td>
+                  <td>{{ o.anna }}</td>
+                  <td>{{ o.kanika }}</td>
+                  <td>{{ o.jerraanna }}</td>
+                  <td>{{ o.oriyaanna }}</td>
+                  <td>{{ o.kamalaanna }}</td>
+                  <td>{{ o.gheeanna }}</td>
+                  <td>{{ o.khichudi }} </td>
+                  <td>{{ o.haradadali }}</td>
+                 <td>{{ o.mugadali }}</td>
+                  <td>{{ o.haradadalma }}</td>
+                 <td>{{ o.mugadalma }}</td>
+                  <td>{{ o.puridalma }}</td>
+                   <td>{{ o.purimithadali }}</td>
+                 <td>{{ o.butadali }}</td>
+                 <td>{{ o.beshar }}</td>
+                <td>{{ o.sagamuga }}</td>
+                 <td>{{ o.bhajachennatarkari }}</td>
+                 <td>{{ o.panneertarkari }}</td>
+                  <td>{{ o.pannerbuta }}</td>
+                 <td>{{ o.mahura }}</td>
+                  <td>{{ o.potalabesanatarkari }}</td>
+                 <td>{{ o.potalarasha }}</td>
+                 <td>{{ o.janhitarkari }}</td>
+                 <td>{{ o.butatarkari }}</td>
+                 <td>{{ o.chips }}</td>
+                 <td>{{ o.kadalibhaja }}</td>
+                  <td>{{ o.potalakurma }}</td>
+                 <td>{{ o.ambularai }}</td>
+                  <td>{{ o.khajurikhatta }}</td>
+                   <td>{{ o.dahibaigana }}</td>
+                   <td>{{ o.sapurikhatta }}</td>
+                   <td>{{ o.fruitsalad }}</td>
+                    <td>{{ o.ambakhatta }}</td>
+                   <td>{{ o.ouukhatta }}</td>
+                    <td>{{ o.dahibundi }}</td>
+                   <td>{{ o.khira }}</td>
+                    <td>{{ o.khiree }}</td>
+                   <td>{{ o.price }}</td>
+                    <td>{{ o.type_of_order }}</td>
+ </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      {% endif %}
+                </div>
+            </div>
+
+             </div>
+           </div>
+         </div>
+      </div>
+      </div>
+    </div>
+</div>
+<!--end-main-container-part-->
+
+<!--Footer-part-->
+
+<div class="row-fluid">
+  <div id="footer" class="span12">  <marquee class="text-white" direction="left">© Copyright 2017 - 2019 | KIIT Temple Trust KIIT | All Rights Reserved
+
+            </marquee> </div>
+</div>
+
+<!--end-Footer-part-->
+
+<script src="{{ url_for('static',filename = 'admin_js/excanvas.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.flot.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.flot.resize.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.dashboard.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.gritter.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.ui.custom.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.peity.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/fullcalendar.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.interface.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.chat.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.validate.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.form_validation.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.wizard.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.uniform.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/select2.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.popover.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url_for('static',filename = 'admin_js/matrix.tables.js') }}"></script>
+<script type="text/javascript">
+
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
+<script type="text/javascript">
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
+
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();
+          }
+          // else, send page to designated URL
+          else {
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+</script>
+</body>
+</html>

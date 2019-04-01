@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta charset="utf-8" />
+	  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	  <!-- Custom Theme files -->
+	  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	  <link href="{{ url_for('static',filename = 'css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" media="all">
+	  <link href="{{ url_for('static',filename = 'css/style.css') }}" type="text/css" rel="stylesheet" media="all">
+	  <link href="{{ url_for('static',filename = 'css/style1.css') }}" type="text/css" rel="stylesheet" media="all">
+	  <!-- navigation -->
+	  <link href="{{ url_for('static',filename = 'css/nav.css') }}" type="text/css" rel="stylesheet" media="all">
+	  <!-- banner slider -->
+	  <link href="{{ url_for('static',filename = 'css/css_slider.css') }}" type="text/css" rel="stylesheet" media="all">
+	  <!-- font-awesome icons -->
+	  <link href="{{ url_for('static',filename = 'css/font-awesome.min.css') }}" rel="stylesheet">
+	  <!-- //Custom Theme files -->
+	  <!-- online-fonts -->
+	  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Charm|Kaushan+Script" rel="stylesheet">
+	  <!-- Common js -->
+	  <script src="{{ url_for('static',filename = 'js/jquery-2.2.3.min.js') }}"></script>
+      {% endblock %}
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+  <!-- header -->
+<div class="main-nav">
+<div class="content white agile-info">
+
+  <nav class="mnu navbar-light">
+
+      <img src="static/images/KIIT-Temple_logo.jpg" >
+
+    <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+    <input type="checkbox" id="drop">
+    <ul class="menu">
+    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Overview</a>
+        <div class="dropdown-content  show">
+          <a href="/about" class="nav-link">About KTT</a>
+          <a class="nav-link" href="/founder">Founder</a>
+          <a href="https://kiit.ac.in/" class="nav-link">KIIT</a>
+          <a href="https://www.kiss.ac.in/" class="nav-link">KISS</a>
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Puja</a>
+        <div class="dropdown-content  show">
+          <a href="/puja" class="nav-link">Architecture</a>
+          <a class="nav-link" href="/festivals">Festivals</a>
+          <a href="/rituals" class="nav-link">Rituals</a>
+          <a href="/deities" class="nav-link">Deities</a>
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Services</a>
+        <div class="dropdown-content  show">
+          <a href="/hall" class="nav-link">Ananda Bazar</a>
+          <a href="/bhoga" class="nav-link">Bhoga Bazar</a>
+          <a href="/donation" class="nav-link">Donation</a>
+        </div>
+      </li>
+      <li class="dropdown nav-item"><a class="nav-link" href="#">Humanatarian Services</a>
+        <div class="dropdown-content  show">
+          <a href="/education" class="nav-link">Education</a>
+          <a class="nav-link" href="/health">Health & Wellness</a>
+          <a href="/environment" class="nav-link">Environment</a>
+          <a href="/family" class="nav-link">Family & Community Welfare</a>
+          <a href="/rural" class="nav-link">Rural Development</a>
+        </div>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="/donation">Donation</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                  <li class="dropdown nav-item"><a  class="nav-link" href="#">Contact Us</a>
+                    <div class="dropdown-content show">
+                      <a href="#" class="nav-link">Feedback</a>
+                      <a class="nav-link" href="#">Complaint</a>
+                    </div>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="/donation">LogIN</a>
+
+                  </li>
+              </ul>
+  </nav>
+
+</div>
+</div>
+{% block content %}{% endblock %}
+{% block footer %}
+<br>
+  <footer class="bg-theme1" style="position: absolute; bottom: 0; width: 100%;">
+    <div class="container-fluid">
+      <div class="cpy-right">
+        <div class="row">
+
+
+          <div class="col-lg-6 mt-lg-0 mt-4">
+            <marquee class="text-white" direction="left">© Copyright 2017 - 2019 | KIIT Temple Trust KIIT | All Rights Reserved
+
+            </marquee>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endblock %}
+</body>
+
+
+
+</html>

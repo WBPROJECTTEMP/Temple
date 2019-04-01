@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<title>KTT Admin | Login</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<link rel="stylesheet" href="{{ url_for('static',filename = 'admin_css/stylelogin.css') }}">
+	</head>
+	<body>
+		<div class="modal-dialog text-center">
+			<div class="col-sm-9 main-section">
+				<div class="modal-content">
+					<div class="col-12 user-img">
+						<img src="static/admin_img/face.png">
+					</div>
+					<div class="col-12 form-input">
+						<form action="/admin" method="post">
+							<div class="input-group">
+							  <div class="input-group-prepend">
+								<span class="input-group-text" id="addon-wrapping"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+							  </div>
+							  <input type="email" name="admin_user" class="form-control" placeholder="Enter Email" aria-label="Username" aria-describedby="addon-wrapping" required>
+							</div>
+							<div class="input-group">
+							  <div class="input-group-prepend">
+								<span class="input-group-text" id="addon-wrapping"><i class="fa fa-lock" aria-hidden="true"></i></span>
+							  </div>
+							  <input type="password" name="admin_password" class="form-control" placeholder="Enter Password" aria-label="Username" aria-describedby="addon-wrapping" required>
+							</div>
+					<a><button type="submit" class="btn btn-success">Log in</button></a>
+						</form>
+					</div>
+					<div class="col-12 forgot">
+						<a href="#">Forgot Password?</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
